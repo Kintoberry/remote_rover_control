@@ -2,29 +2,33 @@ import rpyc
 from rpyc.utils.server import ThreadedServer
 import threading
 import time
+import threading
 
-class CounterThread(threading.Thread):
-    def __init__(self):
+
+class Rover:
+    def __init__(self) -> None:
+        self.thread_lock = threading.Lock()
+        self.rover_serial = None
+    def initiate(self) -> bool:
+        # make initial connection here
+        with self.thread_lock:
+            print("Initiating Rover..")
+        return True
+
+class RoverService(rpyc.Service):
+    def __init__(self, rover_instance):
         super().__init__()
-        self.counter = 0
-        self.running = True
+        self.rover = rover_instance
 
-    def run(self):
-        while self.running:
-            self.counter += 1
-            time.sleep(1)
-
-    def stop(self):
-        self.running = False
-
-class ChildService(rpyc.Service):
     def on_connect(self, conn):
-        self.counter_thread = CounterThread()
-        self.counter_thread.start()
-
+        pass
     def on_disconnect(self, conn):
-        self.counter_thread.stop()
-        self.counter_thread.join()
+        pass
+    def exposed_initiate_rover(self) -> bool:
+        isInitialized = self.rover.initiate()
+        if isInitialized:
+            return True
+        return False
 
     def exposed_hello(self, name):
         return f"Hello, {name}!"
@@ -39,8 +43,11 @@ class ChildService(rpyc.Service):
         return self.counter_thread.counter
 
 def main():
-    t = ThreadedServer(ChildService, port=18860)
-    t.start()
+    rover = Rover()
+    rover_service = RoverService(rover_instance=rover)
+    server = ThreadedServer(service=rover_service, port=20000)
+    print("Rover Service has started..")
+    server.start()
 
 if __name__ == "__main__":
     main()
