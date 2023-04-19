@@ -22,25 +22,16 @@ class RoverService(rpyc.Service):
 
     def on_connect(self, conn):
         pass
+    
     def on_disconnect(self, conn):
         pass
+    
     def exposed_initiate_rover(self) -> bool:
         isInitialized = self.rover.initiate()
         if isInitialized:
             return True
         return False
 
-    def exposed_hello(self, name):
-        return f"Hello, {name}!"
-
-    def exposed_add(self, a, b):
-        return a + b
-
-    def exposed_subtract(self, a, b):
-        return a - b
-
-    def exposed_get_counter(self):
-        return self.counter_thread.counter
 
 def main():
     rover = Rover()
