@@ -12,9 +12,15 @@ class Rover:
     def __init__(self) -> None:
         self.thread_lock = threading.Lock()
         self.rover_serial = None
-    def initiate(self) -> bool:
+        self.initiated = False
+    def initiate(self, reinitiate=False) -> bool:
         # make initial connection here
         with self.thread_lock:
+            # Don't repeat initialization process if we already have a serial connection
+            if not reinitiate and self.rover_serial is not None:
+                return True
+            if self.initiated:
+                cleanup_resources()
             print("Initiating Rover..")
             portname, baud_rate = aux.find_port_name()
             if portname is None:
@@ -29,7 +35,13 @@ class Rover:
                 print("e__context__: ", e.__context__)
                 exit()
             self.rover_serial = rover_serial
+            self.initiated = True
         return True
+    
+    def cleanup_resources():
+        # Call RTL function to put the rover back to the launch point
+        # cleanup non-main threads
+        pass
     
 
 class RoverService(rpyc.Service):
