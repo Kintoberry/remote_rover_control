@@ -16,13 +16,13 @@ class Rover:
         # make initial connection here
         with self.thread_lock:
             print("Initiating Rover..")
-            portname = aux.find_telemetry_port_name()
+            portname, baud_rate = aux.find_telemetry_port_name()
             if portname is None:
                 print("ERROR: Cannot find the port for the telemetry radio.")
                 return False
             rover_serial = None
             try:
-                rover_serial = helper.connect_flight_controller(portname)
+                rover_serial = helper.connect_flight_controller(portname, baud_rate)
             except Exception as e:
                 print("e: ", e)
                 print("e.args: ", e.args)

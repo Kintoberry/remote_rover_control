@@ -8,11 +8,8 @@ import serial.tools.list_ports
 def cleanup(mavserial):
     set_disarm_state(mavserial)
 
-def connect_flight_controller(connection_string, debug=False):
-    if debug:
-        rover_serial = mavutil.mavlink_connection(connection_string, baud=115200)
-        # mavutil.mavlink_connection(connection_string, baud=57600)
-    return mavutil.mavlink_connection(connection_string, baud=57600)
+def connect_flight_controller(connection_string, baud_rate, debug=False):
+    return mavutil.mavlink_connection(connection_string, baud=baud_rate)
 
 # TODO: Command to send MISSION_ITEM_INT message
 # LINK:  https://mavlink.io/en/messages/common.html#MISSION_ITEM_INT
