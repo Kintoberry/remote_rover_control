@@ -9,7 +9,15 @@ def cleanup(mavserial):
     set_disarm_state(mavserial)
 
 def connect_flight_controller(connection_string, baud_rate, debug=False):
-    return mavutil.mavlink_connection(connection_string, baud=baud_rate)
+    try:
+        return mavutil.mavlink_connection(connection_string, baud=baud_rate)
+    except Exception as e:
+            print("e: ", e)
+            print("e.args: ", e.args)
+            print("e__context__: ", e.__context__)
+            return None 
+    
+            
 
 # TODO: Command to send MISSION_ITEM_INT message
 # LINK:  https://mavlink.io/en/messages/common.html#MISSION_ITEM_INT
