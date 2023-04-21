@@ -16,7 +16,7 @@ class Rover:
         # make initial connection here
         with self.thread_lock:
             print("Initiating Rover..")
-            portname, baud_rate = aux.find_telemetry_port_name()
+            portname, baud_rate = aux.find_port_name()
             if portname is None:
                 print("ERROR: Cannot find the port for the telemetry radio.")
                 return False

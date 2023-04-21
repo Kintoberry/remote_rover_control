@@ -1,36 +1,38 @@
 from pymavlink import mavutil
 import serial.tools.list_ports
-
-
-def find_telemetry_port_name_old(debug=False):
-    ports = serial.tools.list_ports.comports()
-    print("ports: ", ports)
-    target_strings = ["0403", "6015", "D308LTJDA"]
-    for port in ports:
-        # Telemetry hardware VID:PID=0403:6015", "SER=D308LTJDA
-        print(f"port: {port}, hwid: {port.hwid}, port.device: {port.device}")
-        if all(target in port.hwid for target in target_strings):
-            return port.device
+import sys
         
+def find_port_name(debug=False) -> tuple[str, int]:
+    # NOTE: it seems `vid` and `pid` and etc might changes depending on which OS you run this code. 
+    # It might be due to firmware-level discrepancies. 
 
-
-def find_telemetry_port_name(debug=False) -> tuple[str, int]:
+    telemetry_radio_identity = None
+    pixhawk4_identity = None
+    if sys.platform == "linux":
+        # port: /dev/ttyUSB0 - FT230X Basic UART - FT230X Basic UART, vid: 1027, pid: 24597, serial_number: D308LTJD, port.device: /dev/ttyUSB0
+        # NOTE: use hexadecimal value. For example, vid = 0x0403 is 1027 in decimal
+        telemetry_radio_identity = {
+            "vid": 0x0403,
+            "pid": 0x6015,
+            "serial_number": "D308LTJD"
+        }
+        # this is only checked on Linux system
+        pixhawk4_identity = {
+            "vid": 0x1209,
+            "pid": 0x5740,
+            "serial_number": "29003F001951383433393139"
+        }
+    elif sys.platform == "win32":
+         # Telemetry hardware on Windows - VID:PID=0403:6015", "SER=D308LTJDA
+         # So the last character 'A' is added to the `SER` compared to on Linux system
+        telemetry_radio_identity = {
+            "vid": 0x0403,
+            "pid": 0x6015,
+            "serial_number": "D308LTJDA"
+        }
     
-    telemetry_radio_identity = {
-        "vid": 0x0403,
-        "pid": 0x6015,
-        "serial_number": "D308LTJDA"
-    }
-
-    pixhawk4_identity = {
-        "vid": 0x1209,
-        "pid": 0x5740,
-        "serial_number": "29003F001951383433393139"
-    }
     ports = serial.tools.list_ports.comports()
-    print("ports: ", ports)
     for port in ports:
-        print("heee")
         if debug:
             # example output for Pixhawk4 serial connection: port: /dev/ttyACM0 - Pixhawk4, vid: 4617, pid: 22336, serial_number: 29003F001951383433393139, port.device: /dev/ttyACM0, port.hwid: USB VID:PID=1209:5740 SER=29003F001951383433393139 LOCATION=2-2:1.0
             print(f"port: {port}, vid: {port.vid}, pid: {port.pid}, serial_number: {port.serial_number}, port.device: {port.device}, port.hwid: {port.hwid}")
@@ -42,6 +44,7 @@ def find_telemetry_port_name(debug=False) -> tuple[str, int]:
 
                 For example, both /dev/ttyACM0 and /dev/ttyACM1 are created for a serial connection with Pixhawk4.
                 If you have to choose the right file among the two, you should consult ardupilot documentation.
+                One might be for MAVLink, while the other might be for logging and etc.
             """
             if debug:
                 print("Pixhawk4 serial port")
@@ -55,5 +58,6 @@ def find_telemetry_port_name(debug=False) -> tuple[str, int]:
     return None, None
 
 if __name__ == "__main__":
-    find_telemetry_port_name(debug=True)
+    portname, baud = find_port_name(debug=True)
+    print("portname: ", portname)
 
