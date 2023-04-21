@@ -4,7 +4,7 @@ import threading
 import time
 from library import utility_functions as helper
 from library import auxiliary_functions as aux
-import workers
+from workers import workers
 
 
 class Rover:
@@ -21,10 +21,12 @@ class Rover:
         with self.thread_lock:
             # Don't repeat initialization process if we already have a serial connection
             if not reinitiate and self.rover_serial is not None:
+                print("Rover is already initalized.")
                 return True
-            if self.rover_initiated:
+            
+            if reinitiate and self.rover_initiated:
                 self._cleanup_resources()
-                pass
+
             if not self._connect_to_rover():
                 return False
             
@@ -58,6 +60,7 @@ class Rover:
             thread.start()
     
         self.threads_initiated = True
+        print("Worker Threads are initiated")
 
     def _kill_threads(self):
         self.threads_terminate_event.set()
@@ -100,9 +103,7 @@ def main():
     server.start()
 
 if __name__ == "__main__":
-    rover = Rover()
-    if rover.initiate():
-        print("Rover is connected.")
+    main()
 
 
 
