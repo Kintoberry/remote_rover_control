@@ -9,6 +9,7 @@ class QueueManager():
             "async_cmd_ack": Queue(maxsize=100),
             "mission_message": Queue(maxsize=100),
             "measurement_request": Queue(maxsize=10),
+            "logging": Queue(maxsize=1000)
         }
         
     def put(self, queue_name: str, item, **kwargs):

@@ -5,15 +5,13 @@ import re
 from datetime import datetime
 from typing import Tuple
 from library import utility_functions as helper
-from library import message_handlers as handler
 import time
 import os
 from pymavlink import mavutil
-from classes import QueueManager
+from classes import QueueManager, MessageDistributor
 
 
 sensor_measurement_finished_event = threading.Event()
-
 
 def worker_mission_operation(rover, terminate_event, queue_manager):
     mission_status_dict = {
@@ -87,7 +85,6 @@ def is_unlimited_loiter_in_progress(statustext_text) -> Tuple[bool, int]:
         return True, mission_item_number
     else:
         return False, -1
-    
 
 def worker_sensor_measurement_mgmt(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():
@@ -115,10 +112,17 @@ def worker_sensor_measurement_mgmt(rover, terminate_event, queue_manager):
              0, 0, 0, 0, 0
              )
             queue_manager.put("async_cmd", block=True)
-            
 
+# def worker_send_mav_cmd_sync(rover, terminate_event, queue_manager):
+#     while not terminate_event.is_set():
+#         try:
+#             mav_cmd_tuple = queue_manager.get("async_cmd", block=True, timeout=1)
+#         except queue.Empty:
+#             continue
+#         if mav_cmd_tuple[0] == "COMMAND_LONG":
+#             rover.mav.command_long_send(*mav_cmd_tuple[1:])
 
-def worker_send_mav_cmd(rover, terminate_event, queue_manager):
+def worker_send_mav_cmd_async(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():
         try:
             mav_cmd_tuple = queue_manager.get("async_cmd", block=True, timeout=1)
@@ -127,28 +131,12 @@ def worker_send_mav_cmd(rover, terminate_event, queue_manager):
         if mav_cmd_tuple[0] == "COMMAND_LONG":
             rover.mav.command_long_send(*mav_cmd_tuple[1:])
 
-def worker_recv_selected_messages(rover, terminate_event, message_types, queue_manager):
-    # store messasges in a list for logging purposes.
-    target_path = get_messages_folder_path(generate_message_filename())
-    # file_lock = threading.Lock()
-    messages = []
+def worker_recv_messages(rover, terminate_event, queue_manager):
+    message_distributor = MessageDistributor(queue_manager)
     while not terminate_event.is_set():
-        response = rover.recv_match(type=message_types, blocking=True)
-        human_readable_msg_dict = handler.find_and_call(response)
-        if human_readable_msg_dict:
-            if human_readable_msg_dict.get("message-type") in handler.MISSION_MESSAGE_TYPES:
-                # TODO: this queue shouldn't block. We need to think about how to avoid blocking here
-                queue_manager.put("mission_message", human_readable_msg_dict, block=True)
-            messages.append(human_readable_msg_dict) 
-    # with file_lock:
-    with open(target_path, 'w') as fp:
-        json.dump(messages, fp, indent=2)    
-        fp.flush()    
-
-
-
-def get_messages_folder_path(message_file_name: str) -> str:
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "captured_messages", "mission_records",message_file_name)
+        message = rover.recv_match(blocking=True, timeout=5)
+        if message is not None:
+            message_distributor.distribute(message)
 
 # TODO: Don't use random number. Use the current time for future reference
 def generate_message_filename() -> str:
@@ -156,15 +144,15 @@ def generate_message_filename() -> str:
     filename = "mission" + current_time + ".json"
     return filename
 
-
 def run(rover_serial):
     threads_terminate_event = threading.Event()
     queue_manager = QueueManager()
 
     worker_threads = []
-    worker_threads.append(threading.Thread(target=worker_recv_selected_messages, daemon=True, args=(rover_serial, threads_terminate_event, handler.MESSAGE_TYPES, queue_manager)))
+    worker_threads.append(threading.Thread(target=worker_recv_messages, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
     worker_threads.append(threading.Thread(target=worker_mission_operation, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
-    worker_threads.append(threading.Thread(target=worker_send_mav_cmd, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
+    worker_threads.append(threading.Thread(target=worker_send_mav_cmd_sync, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
+    worker_threads.append(threading.Thread(target=worker_send_mav_cmd_async, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
     worker_threads.append(threading.Thread(target=worker_sensor_measurement_mgmt, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
     
     return worker_threads, threads_terminate_event
