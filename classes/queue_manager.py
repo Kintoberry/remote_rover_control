@@ -8,7 +8,9 @@ class QueueManager():
             "async_cmd": Queue(maxsize=100),
             "async_cmd_ack": Queue(maxsize=100),
             "mission_message": Queue(maxsize=100),
+            "measurement_request": Queue(maxsize=10),
         }
+        
     def put(self, queue_name: str, item, **kwargs):
         self._check_key_error(queue_name)
         self.queues[queue_name].put(item, **kwargs)

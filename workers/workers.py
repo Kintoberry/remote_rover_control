@@ -15,7 +15,7 @@ from classes import QueueManager
 sensor_measurement_finished_event = threading.Event()
 
 
-def worker_mission_operation(rover, terminate_event, queue_manager, sensing_request_queue):
+def worker_mission_operation(rover, terminate_event, queue_manager):
     mission_status_dict = {
         'current_wp': 0,
         'target_wp': 1,
@@ -50,7 +50,7 @@ def worker_mission_operation(rover, terminate_event, queue_manager, sensing_requ
                 is_unlim_loiter, mission_item_num = is_unlimited_loiter_in_progress(mission_msg_dict['text'])
                 if is_unlim_loiter:
                     print("Unlim lotering!!")
-                    sensing_request_queue.put({"action": "START", 'mission_item_num': mission_item_num}, block=True)
+                    queue_manager.put("measurement_request", {"action": "START", 'mission_item_num': mission_item_num}, block=True)
                     mission_status_dict['loiter'] = True 
                     mission_status_dict['mission_item_num'] = mission_item_num
 
@@ -89,11 +89,11 @@ def is_unlimited_loiter_in_progress(statustext_text) -> Tuple[bool, int]:
         return False, -1
     
 
-def worker_sensor_measurement_mgmt(rover, terminate_event, sensing_request_queue, mav_cmd_queue):
+def worker_sensor_measurement_mgmt(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():
         msg_dict = None
         try:
-            msg_dict = sensing_request_queue.get(block=True, timeout=1)
+            msg_dict = queue_manager.get("measurement_request", block=True, timeout=1)
             print("worker_sensor_measurement_mgmt captured the command")
         except queue.Empty:
             continue
@@ -114,14 +114,14 @@ def worker_sensor_measurement_mgmt(rover, terminate_event, sensing_request_queue
              0,
              0, 0, 0, 0, 0
              )
-            mav_cmd_queue.put(mav_cmd, block=True) 
+            queue_manager.put("async_cmd", block=True)
             
 
 
-def worker_sending_mav_cmd(rover, terminate_event, mav_cmd_queue):
+def worker_send_mav_cmd(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():
         try:
-            mav_cmd_tuple = mav_cmd_queue.get(block=True, timeout=1)
+            mav_cmd_tuple = queue_manager.get("async_cmd", block=True, timeout=1)
         except queue.Empty:
             continue
         if mav_cmd_tuple[0] == "COMMAND_LONG":
@@ -159,15 +159,13 @@ def generate_message_filename() -> str:
 
 def run(rover_serial):
     threads_terminate_event = threading.Event()
-
     queue_manager = QueueManager()
-    sensor_request_queue = queue.Queue(maxsize=10)
-    mav_cmd_queue = queue.Queue(maxsize=1000)
 
-    worker_recv_messages = threading.Thread(target=worker_recv_selected_messages, daemon=True, args=(rover_serial, threads_terminate_event, handler.MESSAGE_TYPES, queue_manager))
-    worker_mission_control = threading.Thread(target=worker_mission_operation, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager, sensor_request_queue))
-    worker_send_cmd = threading.Thread(target=worker_sending_mav_cmd, daemon=True, args=(rover_serial, threads_terminate_event, mav_cmd_queue))
-    worker_sensor_mngt = threading.Thread(target=worker_sensor_measurement_mgmt, daemon=True, args=(rover_serial, threads_terminate_event, sensor_request_queue, mav_cmd_queue))
-    worker_threads = [worker_recv_messages, worker_mission_control, worker_send_cmd, worker_sensor_mngt]
+    worker_threads = []
+    worker_threads.append(threading.Thread(target=worker_recv_selected_messages, daemon=True, args=(rover_serial, threads_terminate_event, handler.MESSAGE_TYPES, queue_manager)))
+    worker_threads.append(threading.Thread(target=worker_mission_operation, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
+    worker_threads.append(threading.Thread(target=worker_send_mav_cmd, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
+    worker_threads.append(threading.Thread(target=worker_sensor_measurement_mgmt, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
+    
     return worker_threads, threads_terminate_event
     
