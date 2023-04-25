@@ -9,12 +9,13 @@ from library import message_handlers as handler
 import time
 import os
 from pymavlink import mavutil
+from classes import QueueManager
 
 
 sensor_measurement_finished_event = threading.Event()
 
 
-def worker_mission_operation(rover, terminate_event, mission_msg_queue, sensing_request_queue):
+def worker_mission_operation(rover, terminate_event, queue_manager, sensing_request_queue):
     mission_status_dict = {
         'current_wp': 0,
         'target_wp': 1,
@@ -33,7 +34,7 @@ def worker_mission_operation(rover, terminate_event, mission_msg_queue, sensing_
     while not terminate_event.is_set():
         mission_msg_dict = None
         try:
-            mission_msg_dict = mission_msg_queue.get(block=True, timeout=1)
+            mission_msg_dict = queue_manager.get("mission_message", block=True, timeout=1)
         except queue.Empty:
             continue
         try:
@@ -126,7 +127,7 @@ def worker_sending_mav_cmd(rover, terminate_event, mav_cmd_queue):
         if mav_cmd_tuple[0] == "COMMAND_LONG":
             rover.mav.command_long_send(*mav_cmd_tuple[1:])
 
-def worker_recv_selected_messages(rover, terminate_event, message_types, mission_msg_queue):
+def worker_recv_selected_messages(rover, terminate_event, message_types, queue_manager):
     # store messasges in a list for logging purposes.
     target_path = get_messages_folder_path(generate_message_filename())
     # file_lock = threading.Lock()
@@ -136,7 +137,8 @@ def worker_recv_selected_messages(rover, terminate_event, message_types, mission
         human_readable_msg_dict = handler.find_and_call(response)
         if human_readable_msg_dict:
             if human_readable_msg_dict.get("message-type") in handler.MISSION_MESSAGE_TYPES:
-                mission_msg_queue.put(human_readable_msg_dict, block=True) # mission-related messages are important (block=True)
+                # TODO: this queue shouldn't block. We need to think about how to avoid blocking here
+                queue_manager.put("mission_message", human_readable_msg_dict, block=True)
             messages.append(human_readable_msg_dict) 
     # with file_lock:
     with open(target_path, 'w') as fp:
@@ -158,12 +160,12 @@ def generate_message_filename() -> str:
 def run(rover_serial):
     threads_terminate_event = threading.Event()
 
-    mission_msg_queue = queue.Queue(maxsize=1000)
+    queue_manager = QueueManager()
     sensor_request_queue = queue.Queue(maxsize=10)
     mav_cmd_queue = queue.Queue(maxsize=1000)
 
-    worker_recv_messages = threading.Thread(target=worker_recv_selected_messages, daemon=True, args=(rover_serial, threads_terminate_event, handler.MESSAGE_TYPES, mission_msg_queue))
-    worker_mission_control = threading.Thread(target=worker_mission_operation, daemon=True, args=(rover_serial, threads_terminate_event, mission_msg_queue, sensor_request_queue))
+    worker_recv_messages = threading.Thread(target=worker_recv_selected_messages, daemon=True, args=(rover_serial, threads_terminate_event, handler.MESSAGE_TYPES, queue_manager))
+    worker_mission_control = threading.Thread(target=worker_mission_operation, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager, sensor_request_queue))
     worker_send_cmd = threading.Thread(target=worker_sending_mav_cmd, daemon=True, args=(rover_serial, threads_terminate_event, mav_cmd_queue))
     worker_sensor_mngt = threading.Thread(target=worker_sensor_measurement_mgmt, daemon=True, args=(rover_serial, threads_terminate_event, sensor_request_queue, mav_cmd_queue))
     worker_threads = [worker_recv_messages, worker_mission_control, worker_send_cmd, worker_sensor_mngt]

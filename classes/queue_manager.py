@@ -9,13 +9,13 @@ class QueueManager():
             "async_cmd_ack": Queue(maxsize=100),
             "mission_message": Queue(maxsize=100),
         }
-    def put(self, queue_name: str, item):
+    def put(self, queue_name: str, item, **kwargs):
         self._check_key_error(queue_name)
-        self.queues[queue_name].put(item)
+        self.queues[queue_name].put(item, **kwargs)
 
-    def get(self, queue_name: str):
+    def get(self, queue_name: str, **kwargs):
         self._check_key_error(queue_name)
-        return self.queues[queue_name].get()
+        return self.queues[queue_name].get(**kwargs)
     
     def empty(self, queue_name: str) -> bool:
         self._check_key_error(queue_name)
