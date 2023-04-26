@@ -1,6 +1,27 @@
 from queue import Queue
+from abc import ABC, abstractmethod
 
-class QueueManager():
+class AbstractQueueManager(ABC):
+    @abstractmethod
+    def put(self, queue_name: str, item, **kwargs):
+        pass
+
+    @abstractmethod
+    def get(self, queue_name: str, **kwargs):
+        pass
+
+    @abstractmethod
+    def empty(self, queue_name: str) -> bool:
+        pass 
+
+    @abstractmethod
+    def full(self, queue_name: str) -> bool:
+        pass 
+    
+
+
+
+class QueueManager(AbstractQueueManager):
     def __init__(self):
         self.queues = {
             "sync_cmd": Queue(maxsize=10),
