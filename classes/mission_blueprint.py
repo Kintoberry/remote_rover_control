@@ -3,8 +3,7 @@ from pymavlink import mavutil
 import sys, os
 
 class MissionBlueprint:
-    def __init__(self, rover_serial):
-        self.rover_serial = rover_serial
+    def __init__(self):
         self.mission_items = []
         self.waypoints = None
         self.mission_count = None
@@ -28,24 +27,24 @@ class MissionBlueprint:
         ]
         return [item for item in self.mission_items if item.command in waypoint_commands]
     
-    def download_mission(self):
+    def download_mission(self, rover_serial):
         # Request the number of mission items
-        self.rover_serial.mav.mission_request_list_send(self.rover_serial.target_system, self.rover_serial.target_component)
+        rover_serial.mav.mission_request_list_send(rover_serial.target_system, rover_serial.target_component)
         self.mission_count = None
 
         # Wait for the mission count response
         while self.mission_count is None:
-            msg = self.rover_serial.recv_match(type="MISSION_COUNT", blocking=True)
+            msg = rover_serial.recv_match(type="MISSION_COUNT", blocking=True)
             self.mission_count = msg.count
 
         # Request each mission item
         for i in range(self.mission_count):
-            self.rover_serial.mav.mission_request_int_send(self.rover_serial.target_system, self.rover_serial.target_component, i)
-            msg = self.rover_serial.recv_match(type="MISSION_ITEM_INT", blocking=True)  # Use MISSION_ITEM_INT instead of MISSION_ITEM
+            rover_serial.mav.mission_request_int_send(rover_serial.target_system, rover_serial.target_component, i)
+            msg = rover_serial.recv_match(type="MISSION_ITEM_INT", blocking=True)  # Use MISSION_ITEM_INT instead of MISSION_ITEM
             mission_blueprint.add_mission_item(msg)
 
         # Send MISSION_ACK after downloading all mission items
-        self.rover_serial.mav.mission_ack_send(self.rover_serial.target_system, self.rover_serial.target_component, mavutil.mavlink.MAV_MISSION_ACCEPTED)
+        rover_serial.mav.mission_ack_send(rover_serial.target_system, rover_serial.target_component, mavutil.mavlink.MAV_MISSION_ACCEPTED)
         if not self.save_waypoints():
             print("ERROR: cannot set the waypoints")
 
@@ -74,9 +73,6 @@ class MissionBlueprint:
         return current_command in loiter_commands
 
     
-    
-
-
 
 if __name__ == "__main__":
     # Add the project root directory to sys.path

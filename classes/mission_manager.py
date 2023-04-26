@@ -1,20 +1,36 @@
 from classes.mission_blueprint import MissionBlueprint
 import threading
+from .custom_exceptions import MissionCompleteException
+from .queue_manager import AbstractQueueManager
+from .custom_exceptions import ExistingSerialConnectionException
 
 class MissionManager:
-    def __init__(self, rover_serial):
-        self.rover_serial = rover_serial
-        self.mission_blueprint = MissionBlueprint(self.rover_serial)
+    def __init__(self, queue_manager: AbstractQueueManager, mission_blueprint):
+        self.rover_serial = None
+        self.queue_manager = queue_manager
+        self.mission_blueprint = mission_blueprint
         self.current_waypoint = None
         self.current_command = None
         self.loitering_waypoint = None
-        self.lock = threading.lock()
+        self.lock = threading.Lock()
+
+    # Setter Injection 
+    def set_rover_serial(self, rover_serial, force=False):
+        if not self.rover_serial or force:
+            self.rover_serial = rover_serial
+        else:
+            raise ExistingSerialConnectionException("Serial connection to the UGV already exists. Use `force` parameter if you must.")
 
     def load_mission(self):
-        self.mission_blueprint.download_mission()
+        self.mission_blueprint.download_mission(self.rover_serial)
 
-    def move_to_next_waypoint(self):
+    def move_to_next_waypoint(self) -> bool:
         # move to the next waypoint regardless of what it's doing now
+        with self.lock:
+            if self.mission_blueprint.is_mission_complete(self.current_waypoint):
+                raise MissionCompleteException("Cannot move to the next waypoint. Mission already complete.")
+            next_waypoint = self.mission_blueprint.get_next_waypoint(self.current_waypoint)
+            # HERE!
         pass
 
     def handle_mission_messages(self):

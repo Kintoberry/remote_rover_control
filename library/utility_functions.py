@@ -8,14 +8,6 @@ import serial.tools.list_ports
 def cleanup(mavserial):
     set_disarm_state(mavserial)
 
-def connect_flight_controller(connection_string, baud_rate, debug=False):
-    try:
-        return mavutil.mavlink_connection(connection_string, baud=baud_rate)
-    except Exception as e:
-            print("e: ", e)
-            print("e.args: ", e.args)
-            print("e__context__: ", e.__context__)
-            return None 
     
             
 

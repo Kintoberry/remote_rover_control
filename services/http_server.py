@@ -9,6 +9,19 @@ def setup_rover_connection():
 
 app = Flask(__name__)
 
+@app.route('/connect-to-rover', methods=['GET'])
+def connect_to_rover():
+    try:
+        rover_conn = app.config['rpc_conn']
+        response = rover_conn.root.connect_to_rover()
+        if response["status_code"] == 200:
+            return jsonify({"message": response["message"]}, response["status_code"])
+        else:
+            return jsonify({"error": response["message"]}, response["status_code"])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route('/initiate-rover', methods=['GET'])
 def initiate_rover():
     try:

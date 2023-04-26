@@ -1,6 +1,30 @@
 from pymavlink import mavutil
 import serial.tools.list_ports
 import sys
+
+
+def connect_to_rover():
+    portname, baud_rate = find_port_name()
+    if portname is None:
+        print("ERROR: Cannot find the port for the telemetry radio.")
+        return False
+    
+    rover_serial = connect_flight_controller(portname, baud_rate)
+    if rover_serial is None:
+        print("ERROR: connect_flight_controller func returned None")
+        return False
+
+    return rover_serial
+
+def connect_flight_controller(connection_string, baud_rate, debug=False):
+    try:
+        return mavutil.mavlink_connection(connection_string, baud=baud_rate)
+    except Exception as e:
+            print("e: ", e)
+            print("e.args: ", e.args)
+            print("e__context__: ", e.__context__)
+            return None 
+
         
 def find_port_name(debug=False) -> tuple[str, int]:
     # NOTE: it seems `vid` and `pid` and etc might changes depending on which OS you run this code. 

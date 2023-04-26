@@ -8,7 +8,7 @@ from library import utility_functions as helper
 import time
 import os
 from pymavlink import mavutil
-from classes import QueueManager, MessageDistributor
+from classes import QueueManager, MessageDistributor, AbstractQueueManager
 
 
 sensor_measurement_finished_event = threading.Event()
@@ -159,9 +159,8 @@ def generate_message_filename() -> str:
     filename = "mission" + current_time + ".json"
     return filename
 
-def run(rover_serial):
+def run(rover_serial, queue_manager: AbstractQueueManager):
     threads_terminate_event = threading.Event()
-    queue_manager = QueueManager()
 
     worker_threads = []
     worker_threads.append(threading.Thread(target=worker_recv_messages, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
