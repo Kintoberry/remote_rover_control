@@ -113,14 +113,23 @@ def worker_sensor_measurement_mgmt(rover, terminate_event, queue_manager):
              )
             queue_manager.put("async_cmd", block=True)
 
-# def worker_send_mav_cmd_sync(rover, terminate_event, queue_manager):
-#     while not terminate_event.is_set():
-#         try:
-#             mav_cmd_tuple = queue_manager.get("async_cmd", block=True, timeout=1)
-#         except queue.Empty:
-#             continue
-#         if mav_cmd_tuple[0] == "COMMAND_LONG":
-#             rover.mav.command_long_send(*mav_cmd_tuple[1:])
+def worker_send_mav_cmd_sync(rover, terminate_event, queue_manager):
+    while not terminate_event.is_set():
+        try:
+            mav_cmd_tuple = queue_manager.get("sync_cmd", block=True, timeout=1)
+        except queue.Empty:
+            continue
+        # TODO: put counter here so that after, say, 5 retransmission we exit the loop and report an error
+        while True:
+            if mav_cmd_tuple[0] == "COMMAND_LONG":
+                rover.mav.command_long_send(*mav_cmd_tuple[1:])
+            command_ack = queue_manager.get("sync_cmd_ack", block=True, timeout=2)
+            if command_ack is None:
+                # have to resend the command
+                continue 
+            elif command_ack.command == mav_cmd_tuple[3]:
+                # command is processed by the ardupilot
+                break
 
 def worker_send_mav_cmd_async(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():
@@ -130,6 +139,13 @@ def worker_send_mav_cmd_async(rover, terminate_event, queue_manager):
             continue
         if mav_cmd_tuple[0] == "COMMAND_LONG":
             rover.mav.command_long_send(*mav_cmd_tuple[1:])
+        # NOTE: for now, we don't really care if async-type commands are acknowledged
+        command_ack = queue_manager.get("async_cmd_ack", block=True, timeout=2)
+        if command_ack is None:
+            pass
+        elif command_ack.command == mav_cmd_tuple[3]:
+                # command is processed by the ardupilot
+                pass
 
 def worker_recv_messages(rover, terminate_event, queue_manager):
     message_distributor = MessageDistributor(queue_manager)
