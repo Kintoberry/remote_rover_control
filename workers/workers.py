@@ -154,7 +154,6 @@ def worker_recv_messages(rover, terminate_event, queue_manager):
         if message is not None:
             message_distributor.distribute(message)
 
-# TODO: Don't use random number. Use the current time for future reference
 def generate_message_filename() -> str:
     current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
     filename = "mission" + current_time + ".json"
