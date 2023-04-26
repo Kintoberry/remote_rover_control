@@ -33,6 +33,34 @@ def initiate_rover():
             return response
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/conduct-mission', methods=['GET'])
+def conduct_mission():
+    try:
+        rover_conn = app.config['rpc_conn']
+        response = rover_conn.root.conduct_mission()
+        if response["status_code"] == 200:
+            return jsonify({"message": response["message"]}, response["status_code"])
+        else:
+            return jsonify({"error": response["message"]}, response["status_code"])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/move-to-next-wp', methods=['GET'])
+def move_to_next_wp():
+    pass 
+
+@app.route('/report-mission-status', methods=['GET'])
+def report_mission_status():
+    pass 
+
+@app.route('/abort-mission', methods=['GET'])
+def abort_mission():
+    pass 
+
+@app.route('/return-to-launch', methods=['GET'])
+def return_to_launch():
+    pass 
 
 def main():
     setup_rover_connection()
