@@ -1,7 +1,7 @@
 import rpyc
 from rpyc.utils.server import ThreadedServer
 from classes import Rover, MissionManager, MissionBlueprint, QueueManager
-from classes.custom_exceptions import ExistingSerialConnectionException
+from classes.custom_exceptions import ExistingSerialConnectionException, MissionCompleteException, AlreadyInLastMissionItemException, SyncCommandFailedException
 from library import auxiliary_functions as aux
 
 
@@ -42,6 +42,23 @@ class RoverService(rpyc.Service):
             return {"status_code": 400, "message": "Rover cannot be armed."}
         print("conduct mission success")
         return {"status_code": 200, "message": "The mission has started"}
+    
+    def exposed_move_to_next_mission_item(self):
+        try:
+            self.rover_instance.mission_manager.move_to_next_mission_item()
+            print("moving to the next mission item succeeded")
+            return {"status_code": 200, "message": "The mission has started"}
+        except MissionCompleteException as e:
+            return {"status_code": 500, "message": str(e)}
+        except AlreadyInLastMissionItemException as e:
+            return {"status_code": 500, "message": str(e)}
+        except MissionCompleteException as e:
+            return {"status_code": 500, "message": str(e)}
+        except SyncCommandFailedException as e:
+            return {"status_code": 500, "message": str(e)}
+        
+    def exposed_report_mission_status(self):
+        pass
 
 
 def main():

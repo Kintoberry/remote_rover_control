@@ -46,12 +46,29 @@ def conduct_mission():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/move-to-next-wp', methods=['GET'])
-def move_to_next_wp():
-    pass 
+@app.route('/move-to-next-mission-item', methods=['GET'])
+def move_to_next_mission_item():
+    try:
+        rover_conn = app.config['rpc_conn']
+        response = rover_conn.root.move_to_next_mission_item()
+        if response["status_code"] == 200:
+            return jsonify({"message": response["message"]}, response["status_code"])
+        else:
+            return jsonify({"error": response["message"]}, response["status_code"])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/report-mission-status', methods=['GET'])
 def report_mission_status():
+    try:
+        rover_conn = app.config['rpc_conn']
+        response = rover_conn.root.move_to_next_mission_item()
+        if response["status_code"] == 200:
+            return jsonify({"message": response["message"]}, response["status_code"])
+        else:
+            return jsonify({"error": response["message"]}, response["status_code"])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
     pass 
 
 @app.route('/abort-mission', methods=['GET'])

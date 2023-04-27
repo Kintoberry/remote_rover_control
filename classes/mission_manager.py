@@ -18,12 +18,6 @@ class MissionManager:
         self.mission_complete = False
         self.loitering = False
         self.loiter_time = None
-    
-
-
-        # self.current_cmd = None
-        # self.current_command = None
-        # self.loitering_waypoint = None
 
     # TODO: need to reset mission status after finished the mission, and when it's ready to repeat the mission
     # Maybe throttle disarm should signal this state change
@@ -123,37 +117,24 @@ class MissionManager:
                 self.current_mission_item = next_mission_item
             else:
                 raise SyncCommandFailedException("Couldn't send sync command MAV_CMD_DO_SET_MISSION_CURRENT")
-
-    # def handle_mission_messages(self):
-    #     while True:
-    #         msg = self.rover_serial.recv_match(blocking=True)
-    #         if msg.get_type() == "MISSION_CURRENT":
-    #             self.current_waypoint = msg.seq
-    #             self.current_command = self.mission_blueprint.mission_items[self.current_waypoint].command
-    #             if self.mission_blueprint.is_rover_loitering(self.current_command):
-    #                 self.loitering_waypoint = self.current_waypoint
-    #             else:
-    #                 self.loitering_waypoint = None
-    #         elif msg.get_type() == "MISSION_ITEM_REACHED":
-    #             reached_waypoint = msg.seq
-    #             print(f"Reached waypoint: {reached_waypoint}")
-    #         elif msg.get_type() == "STATUSTEXT":
-    #             print(f"Status text: {msg.text}")
-
             
-    # def display_current_status(self):
-    #     if self.mission_blueprint is None:
-    #         print("Mission not loaded yet.")
-    #         return
+    # def report_mission_status(self) -> dict:
+    #     mission_status = {
+    #         "current_waypoint": self.current_waypoint,
+    #         "current_mission_item": self.current_mission_item,
+    #         "target_waypoint": self.target_waypoint,
+    #     }
 
-    #     if self.current_waypoint is None:
-    #         print("No waypoint information received yet.")
-    #     else:
-    #         print(f"Current waypoint: {self.current_waypoint}")
 
-    #         if self.loitering_waypoint is not None:
-    #             print(f"Loitering at waypoint: {self.loitering_waypoint}")
 
-    #         waypoints_remaining = self.mission_blueprint.get_number_of_waypoints() - self.current_waypoint
-    #         print(f"Waypoints remaining: {waypoints_remaining}")
-
+    #     self.rover_serial = None
+    #     self.queue_manager = queue_manager
+    #     self.mission_blueprint = mission_blueprint
+    #     self.thread_lock = threading.Lock()
+    #     self.target_waypoint = None
+    #     self.current_waypoint = None
+    #     self.current_mission_item = None
+    #     self.final_waypoint = None
+    #     self.mission_complete = False
+    #     self.loitering = False
+    #     self.loiter_time = None
