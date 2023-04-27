@@ -15,7 +15,8 @@ class MessageDistributor():
 
     def distribute(self, message):
         message_type = message.get_type()
-
+        # type(message)
+        # OUTPUT: <class 'pymavlink.dialects.v20.ardupilotmega.MAVLink_mission_current_message'>
         if message_type in self.mission_message_types:
             self.queue_manager.put("mission_message", message, block=True)
         

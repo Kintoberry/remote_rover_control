@@ -144,7 +144,7 @@ class Rover:
         if self.threads_initiated:
             print("ERROR: worker threads are already initiated.")
             return
-        self.worker_threads, self.threads_terminate_event = workers.run(self.rover_serial, self.queue_manager)
+        self.worker_threads, self.threads_terminate_event = workers.run(self.rover_serial, self.queue_manager, self.mission_manager)
         for thread in self.worker_threads:
             thread.start()
 
