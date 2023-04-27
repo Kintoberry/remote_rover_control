@@ -6,6 +6,9 @@ class MissionCompleteException(Exception):
 class AlreadyInLastWaypointException(Exception):
     pass
 
+class AlreadyInLastMissionItemException(Exception):
+    pass
+
 class MissionAlreadyDownloadedException(Exception):
     pass
 

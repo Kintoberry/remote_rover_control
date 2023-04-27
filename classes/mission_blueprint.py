@@ -16,6 +16,10 @@ class MissionBlueprint:
     def _save_waypoints(self):
         self.waypoints = sorted([item for item in self.mission_items if item.command == mavutil.mavlink.MAV_CMD_NAV_WAYPOINT], key=lambda wp: wp.seq)
     
+    def _sort_mission_items(self):
+        sorted(self.mission_items, key=lambda item: item.seq)
+    
+
     def is_waypoint(self, seq) -> bool:
         for waypoint in self.waypoints:
             if waypoint.seq == seq:
@@ -29,11 +33,17 @@ class MissionBlueprint:
                     return True
         return False
 
-    def get_next_waypoint(self, seq):
+    def get_next_waypoint(self, seq) -> int:
         for waypoint in self.waypoints:
             if waypoint.seq > seq:
                 return waypoint.seq
         return self.get_final_waypoint()
+    
+    def get_next_mission_item(self, seq) -> int:
+        for item in self.mission_items:
+            if item.seq > seq:
+                return item.seq
+        return self.get_final_mission_item()
     
     def get_first_waypoint(self) -> int:
         if len(self.waypoints) > 0:
@@ -41,8 +51,20 @@ class MissionBlueprint:
         else:
             raise IndexError("The waypoints list is empty, no first waypoint available.")
     
+    def get_first_mission_item(self) -> int:
+        if len(self.mission_items) > 0:
+            return self.mission_items[0].seq
+        else:
+            raise IndexError("The waypoints list is empty, no first waypoint available.")
+        
     def get_final_waypoint(self) -> int:
         if len(self.waypoints) > 0:
+            return self.waypoints[-1].seq
+        else:
+            raise IndexError("The waypoints list is empty, no final waypoint available.")
+    
+    def get_final_mission_item(self) -> int:
+        if len(self.mission_items) > 0:
             return self.waypoints[-1].seq
         else:
             raise IndexError("The waypoints list is empty, no final waypoint available.")
