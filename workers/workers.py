@@ -34,17 +34,7 @@ def is_unlimited_loiter_in_progress2(statustext_text) -> Tuple[bool, int]:
         print("false")
         return False, -1
 
-def is_unlimited_loiter_in_progress(statustext_text) -> Tuple[bool, int]:
-    # to parse the value of 'text' in 'STATUSTEXT' message
-    pattern = r"(Mission:)\s*(\d+)\s*(\w+)"
-    match = re.match(pattern, statustext_text)
-    if match:
-        # mission_text = match.group(1)
-        mission_item_number = int(match.group(2))
-        # LoitUnlim = match.group(3)
-        return True, mission_item_number
-    else:
-        return False, -1
+
 
 def worker_sensor_measurement_mgmt(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():

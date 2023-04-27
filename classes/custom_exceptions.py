@@ -3,6 +3,9 @@
 class MissionCompleteException(Exception):
     pass
 
+class AlreadyInLastWaypointException(Exception):
+    pass
+
 class MissionAlreadyDownloadedException(Exception):
     pass
 

@@ -16,26 +16,24 @@ class MissionBlueprint:
     def _save_waypoints(self):
         self.waypoints = sorted([item for item in self.mission_items if item.command == mavutil.mavlink.MAV_CMD_NAV_WAYPOINT], key=lambda wp: wp.seq)
     
-    def get_commands_related_to_waypoints(self):
-        waypoint_commands = [
-            mavutil.mavlink.MAV_CMD_NAV_LOITER_UNLIM,
-            mavutil.mavlink.MAV_CMD_NAV_LOITER_TURNS,
-            mavutil.mavlink.MAV_CMD_NAV_LOITER_TIME,
-            # Add other waypoint-related commands here
-        ]
-        return [item for item in self.mission_items if item.command in waypoint_commands]
-    
     def is_waypoint(self, seq) -> bool:
         for waypoint in self.waypoints:
             if waypoint.seq == seq:
                 return True
         return False
     
+    def is_loiter_unlimited_cmd(self, seq) -> bool:
+        for item in self.mission_items:
+            if item.seq == seq:
+                if item.command == mavutil.mavlink.MAV_CMD_NAV_LOITER_UNLIM:
+                    return True
+        return False
+
     def get_next_waypoint(self, seq):
         for waypoint in self.waypoints:
             if waypoint.seq > seq:
                 return waypoint.seq
-        return -1
+        return self.get_final_waypoint()
     
     def get_first_waypoint(self) -> int:
         if len(self.waypoints) > 0:
@@ -78,25 +76,35 @@ class MissionBlueprint:
     def get_number_of_waypoints(self):
         return len(self.waypoints)
     
-    def get_mission_item_summary(self):
-        for index, item in enumerate(self.mission_items):
-            print(f"index: {index}, item: {item}")
-
-    def get_waypoints_summary(self):
-        for index, item in enumerate(self.waypoints):
-            print(f"index: {index}, item: {item}")
-
     def is_mission_complete(self, current_sequence):
         return current_sequence >= len(self.mission_items)
 
-    def is_rover_loitering(self, current_command):
-        loiter_commands = [
-            mavutil.mavlink.MAV_CMD_NAV_LOITER_UNLIM,
-            mavutil.mavlink.MAV_CMD_NAV_LOITER_TURNS,
-            mavutil.mavlink.MAV_CMD_NAV_LOITER_TIME,
-            # Add other loiter-related commands here
-        ]
-        return current_command in loiter_commands
+    # def get_mission_item_summary(self):
+    #     for index, item in enumerate(self.mission_items):
+    #         print(f"index: {index}, item: {item}")
+
+    # def get_waypoints_summary(self):
+    #     for index, item in enumerate(self.waypoints):
+    #         print(f"index: {index}, item: {item}")
+
+    # def is_rover_loitering(self, current_command):
+    #     loiter_commands = [
+    #         mavutil.mavlink.MAV_CMD_NAV_LOITER_UNLIM,
+    #         mavutil.mavlink.MAV_CMD_NAV_LOITER_TURNS,
+    #         mavutil.mavlink.MAV_CMD_NAV_LOITER_TIME,
+    #         # Add other loiter-related commands here
+    #     ]
+    #     return current_command in loiter_commands
+
+    # Not being used right now
+    # def get_commands_related_to_waypoints(self):
+    #     waypoint_commands = [
+    #         mavutil.mavlink.MAV_CMD_NAV_LOITER_UNLIM,
+    #         mavutil.mavlink.MAV_CMD_NAV_LOITER_TURNS,
+    #         mavutil.mavlink.MAV_CMD_NAV_LOITER_TIME,
+    #         # Add other waypoint-related commands here
+    #     ]
+    #     return [item for item in self.mission_items if item.command in waypoint_commands]
 
     
 

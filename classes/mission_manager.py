@@ -1,6 +1,6 @@
 from classes.mission_blueprint import MissionBlueprint
 import threading
-from .custom_exceptions import MissionCompleteException
+from .custom_exceptions import MissionCompleteException, AlreadyInLastWaypointException
 from .queue_manager import AbstractQueueManager
 from .custom_exceptions import ExistingSerialConnectionException
 
@@ -14,9 +14,19 @@ class MissionManager:
         self.current_waypoint = None
         self.final_waypoint = None
         self.mission_complete = False
+        self.loitering = False
+        self.loiter_time = None
+    
 
+
+        self.current_cmd = None
         self.current_command = None
         self.loitering_waypoint = None
+
+    # TODO: need to reset mission status after finished the mission, and when it's ready to repeat the mission
+    # Maybe throttle disarm should signal this state change
+    # def reset_mission_status(self):
+        # pass
 
     # Setter Injection 
     def set_rover_serial(self, rover_serial, force=False):
@@ -41,57 +51,35 @@ class MissionManager:
         with self.thread_lock:
             message_type = message.get_type()
             if message_type == "MISSION_CURRENT":
-                if self.mission_blueprint.is_waypoint(seq):
+                if self.mission_blueprint.is_waypoint(message.seq):
                     self.target_waypoint = message.seq
+                elif self.mission_blueprint.is_loiter_unlimited_cmd(message.seq):
+                    self.loitering = True 
+                    self.loiter_time = -1
+
             elif message_type == "MISSION_ITEM_RECHEAD":
                 if self.mission_blueprint.is_waypoint(message.seq):
                     self.current_waypoint = message.seq
                     if message.seq == self.final_waypoint:
                         self.target_waypoint = self.final_waypoint
                         self.mission_complete = True
-            elif message_type == "STATUSTEXT":
+                elif self.mission_blueprint.is_loiter_unlimited_cmd(message.seq):
+                    self.loitering = False 
+                    self.loiter_time = None
+            # TODO: Need to find out if we need to parse STATUSTEXT
+            # elif message_type == "STATUSTEXT":
                 
-                    
-        try:
-            if mission_msg_dict['mavpackettype'] == "MISSION_CURRENT":
-                mission_status_dict['target_wp'] = mission_msg_dict['seq']
-            elif mission_msg_dict['mavpackettype'] == "MISSION_ITEM_RECHEAD":
-                print("capture mission item reached")
-                mission_status_dict['current_wp'] = mission_msg_dict['seq']
-                # TODO: target_wp may not be +1 of 'current_wp'. `current_wp + 1` may be next MAV_CMD. Need to fix this.
-                mission_status_dict['target_wp'] = mission_msg_dict['seq'] + 1
-            elif mission_msg_dict['mavpackettype'] == "STATUSTEXT":
-                is_unlim_loiter, mission_item_num = is_unlimited_loiter_in_progress(mission_msg_dict['text'])
-                if is_unlim_loiter:
-                    print("Unlim lotering!!")
-                    queue_manager.put("measurement_request", {"action": "START", 'mission_item_num': mission_item_num}, block=True)
-                    mission_status_dict['loiter'] = True 
-                    mission_status_dict['mission_item_num'] = mission_item_num
-
-                else:
-                    mission_status_dict['loiter'] = False
-        except KeyError:
-            # TODO: use logger here instead
-            print("'mavpackettype' key doesn't exist.")
-            continue
-        except Exception as e:
-            print("Unknown error has ocurred while trying to access 'mavpackettype' key.")
-            continue
-        # print(json.dumps(mission_msg_dict, indent=2))
-        mission_status_dict = {
-            'current_wp': 0,
-            'target_wp': 1,
-            'mission_item_num': 0,
-            'loiter': False,
-            'mission_status': "IDLE",
-            'possible_mission_status': [
-                "IDLE (PRIOR TO MISSION)",
-                "MOVING TO TARGET WAYPOINT",
-                "LOITER UNLIMITED",
-                "LOITER LIMITED TIME",
-                "MISSION COMPLETE",
-            ]
-        }
+    def _is_unlimited_loiter_in_progress(self.statustext_text) -> Tuple[bool, int]:
+        # to parse the value of 'text' in 'STATUSTEXT' message
+        pattern = r"(Mission:)\s*(\d+)\s*(\w+)"
+        match = re.match(pattern, statustext_text)
+        if match:
+            # mission_text = match.group(1)
+            mission_item_number = int(match.group(2))
+            # LoitUnlim = match.group(3)
+            return True, mission_item_number
+        else:
+            return False, -1
 
     def move_to_next_waypoint(self) -> bool:
         # move to the next waypoint regardless of what it's doing now
@@ -99,7 +87,8 @@ class MissionManager:
             if self.mission_blueprint.is_mission_complete(self.current_waypoint):
                 raise MissionCompleteException("Cannot move to the next waypoint. Mission already complete.")
             next_waypoint = self.mission_blueprint.get_next_waypoint(self.current_waypoint)
-            if next_waypoint == -1: # no next waypoint
+            if next_waypoint == self.mission_blueprint.get_final_waypoint():
+                raise AlreadyInLastWaypointException("There is no next waypoint.")
             # HERE!
         pass
 
