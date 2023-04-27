@@ -8,7 +8,6 @@ from library import utility_functions as helper
 import time
 import os
 from pymavlink import mavutil
-from classes import QueueManager, MessageDistributor, AbstractQueueManager
 from classes.custom_exceptions import SyncCommandFailedException
 
 
@@ -157,6 +156,7 @@ def worker_send_mav_cmd_async(rover, terminate_event, queue_manager):
                 pass
 
 def worker_recv_messages(rover, terminate_event, queue_manager):
+    from classes import MessageDistributor
     message_distributor = MessageDistributor(queue_manager)
     while not terminate_event.is_set():
         message = rover.recv_match(blocking=True, timeout=5)
@@ -168,9 +168,8 @@ def generate_message_filename() -> str:
     filename = "mission" + current_time + ".json"
     return filename
 
-def run(rover_serial, queue_manager: AbstractQueueManager):
+def run(rover_serial, queue_manager):
     threads_terminate_event = threading.Event()
-
     worker_threads = []
     worker_threads.append(threading.Thread(target=worker_recv_messages, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))
     worker_threads.append(threading.Thread(target=worker_mission_operation, daemon=True, args=(rover_serial, threads_terminate_event, queue_manager)))

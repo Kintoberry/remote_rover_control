@@ -17,7 +17,7 @@ class MessageDistributor():
         message_type = message.get_type()
 
         if message_type in self.mission_message_types:
-            self.queue_manager.put("mission_message", block=True)
+            self.queue_manager.put("mission_message", message, block=True)
         
         if message_type == "COMMAND_ACK":
             if self.sync_mav_cmd:
@@ -27,7 +27,7 @@ class MessageDistributor():
                 self.queue_manager.put("async_cmd_ack", message.command, block=True)
         
         # put every message received into `logging` queue
-        self.queue_manager.put("logging")
+        self.queue_manager.put("logging", message)
 
     def register_sync_cmd(self, mav_cmd: int):
         self.sync_mav_cmd.append(mav_cmd)

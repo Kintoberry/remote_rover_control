@@ -16,17 +16,17 @@ class RoverService(rpyc.Service):
     def on_disconnect(self, conn):
         pass
     
-    def exposed_initiate_rover(self) -> bool:
+    def exposed_initiate_rover(self) -> dict:
         isInitialized = self.rover_instance.initiate()
         if isInitialized:
-            return True
-        return False
+            return {"status_code": 200, "message": "Rover is initiated."}
+        return {"status_code": 400, "message": "Rover has filed to initiate."}
     
     def exposed_connect_to_rover(self) -> dict:
         try:
             rover_serial = aux.connect_to_rover()
             self.rover_instance.set_rover_serial(rover_serial)
-            return {"status_code": 200, "message": "Rover is successfully initialized."}
+            return {"status_code": 200, "message": "Connected to the rover."}
         except ExistingSerialConnectionException as e:
             return {"status_code": 400, "message": str(e)}  # Bad Request
         except Exception as e:
@@ -34,11 +34,13 @@ class RoverService(rpyc.Service):
         
     def exposed_conduct_mission(self):
         if not self.rover_instance.ready_for_mission():
-            return {"status_code": 400, "message": "ERROR: You need to connect to the rover, downalod the mission, and initiate the rover."}
+            print("why is it here?")
+            return {"status_code": 400, "message": "You need to connect to the rover, downalod the mission, and initiate the rover."}
         if not self.rover_instance.set_auto_mode():
-            return {"status_code": 400, "message": "ERROR: Failed to set AUTO mode."}
+            return {"status_code": 400, "message": "Failed to set AUTO mode."}
         if not self.rover_instance.arm_rover():
-            return {"status_code": 400, "message": "ERROR: Rover cannot be armed."}
+            return {"status_code": 400, "message": "Rover cannot be armed."}
+        print("conduct mission success")
         return {"status_code": 200, "message": "The mission has started"}
 
 
