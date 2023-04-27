@@ -1,0 +1,490 @@
+===== Auto mode command: 
+===== Arm command: MISSION BEGINS 
+===== time sleep 30 seconds BEGINS 
+COMMAND_ACK {command : 176, result : 0, progress : 0, result_param2 : 0, target_system : 255, target_component : 0}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 9, custom_mode : 10, system_status : 4, mavlink_version : 3}
+COMMAND_ACK {command : 400, result : 0, progress : 0, result_param2 : 0, target_system : 255, target_component : 0}
+STATUSTEXT {severity : 4, text : Warning: Arming Checks Disabled, id : 0, chunk_seq : 0}
+STATUSTEXT {severity : 6, text : Throttle armed, id : 0, chunk_seq : 0}
+ATTITUDE {time_boot_ms : 1189963, roll : -0.018558606505393982, pitch : 0.011408570222556591, yaw : 1.368814468383789, rollspeed : 0.0003703524125739932, pitchspeed : 0.00020661574671976268, yawspeed : 0.00020203653548378497}
+VFR_HUD {airspeed : 0.009000000543892384, groundspeed : 0.04868916794657707, heading : 78, throttle : 0, alt : 48.7599983215332, climb : 0.0069585838355124}
+AHRS2 {roll : -0.03181704878807068, pitch : -0.01618701033294201, yaw : 1.3483049869537354, altitude : 48.779998779296875, lat : 364301346, lng : 1274000871}
+GLOBAL_POSITION_INT {time_boot_ms : 1190002, lat : 364301350, lon : 1274000872, alt : 48770, relative_alt : 10, vx : -3, vy : -3, vz : 0, hdg : 7842}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 115, voltage_battery : 7196, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4912, Vservo : 6082, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 219432}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1190003125, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1190003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1190003204, xacc : -18, yacc : 33, zacc : -999, xgyro : -1, ygyro : 0, zgyro : 0, xmag : 38, ymag : -421, zmag : 351, id : 0, temperature : 3923}
+SCALED_IMU2 {time_boot_ms : 1190003, xacc : -11, yacc : 32, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 191, ymag : -347, zmag : 304, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1190003, press_abs : 1020.8082885742188, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1189833000, fix_type : 4, lat : 364301346, lon : 1274000871, alt : 34550, eph : 64, epv : 85, vel : 0, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54571, h_acc : 784, v_acc : 1096, vel_acc : 230, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491983986751, time_boot_ms : 1190022}
+AHRS {omegaIx : 0.002074264455586672, omegaIy : 0.00019007128139492124, omegaIz : 0.00033277375041507185, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.02150215208530426, error_yaw : 0.0012137441663071513}
+HWSTATUS {Vcc : 4875, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.0228200014680624, pos_horiz_variance : 0.00912223570048809, pos_vert_variance : 0.024131247773766518, compass_variance : 0.02847808226943016, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1190023, x : -14.457691192626953, y : -3.268991708755493, z : -0.07037241011857986, vx : -0.03186238184571266, vy : -0.03448713570833206, vz : -0.007007270120084286}
+VIBRATION {time_usec : 1190023310, vibration_x : 0.026340290904045105, vibration_y : 0.07003067433834076, vibration_z : 0.04563421010971069, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1190023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7196, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1190222, roll : -0.018893903121352196, pitch : 0.01155969686806202, yaw : 1.3683764934539795, rollspeed : -0.002207206329330802, pitchspeed : 0.0012708324939012527, yawspeed : -0.000484655232867226}
+VFR_HUD {airspeed : 0.007000000216066837, groundspeed : 0.04506848007440567, heading : 78, throttle : 0, alt : 48.77000045776367, climb : 0.006987493019551039}
+AHRS2 {roll : -0.032519325613975525, pitch : -0.016085859388113022, yaw : 1.3483418226242065, altitude : 48.59000015258789, lat : 364301343, lng : 1274000873}
+ATTITUDE {time_boot_ms : 1190463, roll : -0.018633296713232994, pitch : 0.011098048649728298, yaw : 1.3680801391601562, rollspeed : 0.00025945587549358606, pitchspeed : -0.0004191472544334829, yawspeed : -0.00043545252992771566}
+VFR_HUD {airspeed : 0.01100000087171793, groundspeed : 0.039296459406614304, heading : 78, throttle : 0, alt : 48.75, climb : 0.002599349245429039}
+AHRS2 {roll : -0.033172860741615295, pitch : -0.017131056636571884, yaw : 1.348385214805603, altitude : 48.64999771118164, lat : 364301342, lng : 1274000874}
+GLOBAL_POSITION_INT {time_boot_ms : 1190502, lat : 364301348, lon : 1274000871, alt : 48750, relative_alt : -3, vx : -2, vy : -2, vz : 0, hdg : 7838}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 131, voltage_battery : 7193, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5011, Vservo : 6085, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 218792}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1190503163, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1190503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1190503264, xacc : -19, yacc : 34, zacc : -999, xgyro : -1, ygyro : 0, zgyro : 0, xmag : 39, ymag : -421, zmag : 351, id : 0, temperature : 3923}
+SCALED_IMU2 {time_boot_ms : 1190503, xacc : -13, yacc : 33, zacc : -999, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 194, ymag : -349, zmag : 304, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1190503, press_abs : 1020.822265625, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1190433000, fix_type : 4, lat : 364301342, lon : 1274000874, alt : 34660, eph : 64, epv : 85, vel : 1, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54681, h_acc : 770, v_acc : 1074, vel_acc : 248, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491984467357, time_boot_ms : 1190503}
+AHRS {omegaIx : 0.0020680325105786324, omegaIy : 0.0001753779943101108, omegaIz : 0.0003125465882476419, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.021647674962878227, error_yaw : 0.001175826182588935}
+HWSTATUS {Vcc : 5011, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.014476075768470764, pos_horiz_variance : 0.012661765329539776, pos_vert_variance : 0.012699460610747337, compass_variance : 0.02847469411790371, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1190523, x : -14.478403091430664, y : -3.2694790363311768, z : -0.055514298379421234, vx : -0.024383028969168663, vy : -0.02914447896182537, vz : -0.0019961094949394464}
+VIBRATION {time_usec : 1190523100, vibration_x : 0.04058026149868965, vibration_y : 0.06586475670337677, vibration_z : 0.05617455020546913, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1190523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7193, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1190722, roll : -0.018696816638112068, pitch : 0.011105037294328213, yaw : 1.3677676916122437, rollspeed : -0.00047007761895656586, pitchspeed : 4.1450257413089275e-06, yawspeed : 0.0010510137071833014}
+VFR_HUD {airspeed : 0.05000000074505806, groundspeed : 0.034654974937438965, heading : 78, throttle : 0, alt : 48.73999786376953, climb : -0.0004987640422768891}
+AHRS2 {roll : -0.03246104344725609, pitch : -0.01655726134777069, yaw : 1.3484985828399658, altitude : 48.63999938964844, lat : 364301342, lng : 1274000874}
+RC_CHANNELS_SCALED {time_boot_ms : 1190723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1190963, roll : -0.018630031496286392, pitch : 0.010997549630701542, yaw : 1.3674308061599731, rollspeed : -0.00017398479394614697, pitchspeed : -0.00035175448283553123, yawspeed : 0.0003743264533113688}
+VFR_HUD {airspeed : 0.010000000707805157, groundspeed : 0.02985726110637188, heading : 78, throttle : 0, alt : 48.71999740600586, climb : -0.002558136358857155}
+AHRS2 {roll : -0.03230336308479309, pitch : -0.016669178381562233, yaw : 1.348647117614746, altitude : 48.55999755859375, lat : 364301342, lng : 1274000874}
+GLOBAL_POSITION_INT {time_boot_ms : 1191002, lat : 364301346, lon : 1274000872, alt : 48720, relative_alt : -32, vx : -1, vy : -2, vz : 0, hdg : 7834}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 131, voltage_battery : 7042, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4980, Vservo : 5836, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 215672}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1191003104, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1191003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1191003313, xacc : -19, yacc : 31, zacc : -1001, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 35, ymag : -417, zmag : 354, id : 0, temperature : 3923}
+SCALED_IMU2 {time_boot_ms : 1191003, xacc : -11, yacc : 31, zacc : -1000, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 186, ymag : -351, zmag : 302, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1191003, press_abs : 1020.832763671875, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1190833000, fix_type : 4, lat : 364301342, lon : 1274000874, alt : 34690, eph : 64, epv : 85, vel : 1, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54710, h_acc : 763, v_acc : 1069, vel_acc : 246, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491984986890, time_boot_ms : 1191023}
+AHRS {omegaIx : 0.002067657420411706, omegaIy : 0.00016570244042668492, omegaIz : 0.00029356099548749626, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.023140404373407364, error_yaw : 0.0038024650420993567}
+HWSTATUS {Vcc : 4967, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.013833755627274513, pos_horiz_variance : 0.009961322881281376, pos_vert_variance : 0.005655484739691019, compass_variance : 0.024381369352340698, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1191023, x : -14.49551010131836, y : -3.264146566390991, z : -0.025892887264490128, vx : -0.018609900027513504, vy : -0.022095195949077606, vz : 0.003295858856290579}
+VIBRATION {time_usec : 1191023338, vibration_x : 0.0314694344997406, vibration_y : 0.04332254081964493, vibration_z : 0.07010897248983383, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1191023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7042, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1191222, roll : -0.018833670765161514, pitch : 0.011013966053724289, yaw : 1.3671865463256836, rollspeed : 0.0011689490638673306, pitchspeed : -0.0011527047026902437, yawspeed : -0.0022592272143810987}
+VFR_HUD {airspeed : 0.07100000232458115, groundspeed : 0.026861827820539474, heading : 78, throttle : 0, alt : 48.709999084472656, climb : -0.005201399326324463}
+AHRS2 {roll : -0.03348599001765251, pitch : -0.016023922711610794, yaw : 1.3490445613861084, altitude : 48.68000030517578, lat : 364301343, lng : 1274000873}
+ATTITUDE {time_boot_ms : 1191463, roll : -0.01893996074795723, pitch : 0.01087440736591816, yaw : 1.3667793273925781, rollspeed : -0.00013930047862231731, pitchspeed : 0.0003234614268876612, yawspeed : -0.0001957673521246761}
+VFR_HUD {airspeed : 0.02800000086426735, groundspeed : 0.023812470957636833, heading : 78, throttle : 0, alt : 48.689998626708984, climb : -0.009480426087975502}
+AHRS2 {roll : -0.032239753752946854, pitch : -0.01622418500483036, yaw : 1.3492165803909302, altitude : 48.689998626708984, lat : 364301343, lng : 1274000873}
+GLOBAL_POSITION_INT {time_boot_ms : 1191502, lat : 364301346, lon : 1274000872, alt : 48680, relative_alt : -71, vx : 0, vy : -2, vz : 1, hdg : 7830}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 134, voltage_battery : 7078, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4837, Vservo : 6060, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 215672}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1191503203, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1191503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1191503301, xacc : -21, yacc : 32, zacc : -1000, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 36, ymag : -417, zmag : 352, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1191503, xacc : -13, yacc : 32, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 187, ymag : -348, zmag : 304, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1191503, press_abs : 1020.8184204101562, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1191433000, fix_type : 4, lat : 364301343, lon : 1274000873, alt : 34680, eph : 64, epv : 85, vel : 2, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54701, h_acc : 766, v_acc : 1075, vel_acc : 233, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491985467391, time_boot_ms : 1191503}
+AHRS {omegaIx : 0.0020590219646692276, omegaIy : 0.00016094425518531352, omegaIz : 0.0002773722808342427, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.024728039279580116, error_yaw : 0.006249522790312767}
+HWSTATUS {Vcc : 4837, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.006805056240409613, pos_horiz_variance : 0.005733116529881954, pos_vert_variance : 0.002829384058713913, compass_variance : 0.019592050462961197, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1191523, x : -14.502511024475098, y : -3.2654972076416016, z : 0.012572620995342731, vx : -0.008619588799774647, vy : -0.021522756665945053, vz : 0.01076987199485302}
+VIBRATION {time_usec : 1191523192, vibration_x : 0.029164709150791168, vibration_y : 0.06828532367944717, vibration_z : 0.041953057050704956, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1191523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7078, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1191722, roll : -0.01891731470823288, pitch : 0.01084926351904869, yaw : 1.3664942979812622, rollspeed : -0.0003221102524548769, pitchspeed : -0.000403595098759979, yawspeed : 0.0003196898614987731}
+VFR_HUD {airspeed : 0.026000000536441803, groundspeed : 0.021847721189260483, heading : 78, throttle : 0, alt : 48.66999816894531, climb : -0.012695644982159138}
+AHRS2 {roll : -0.032553624361753464, pitch : -0.015949474647641182, yaw : 1.3495502471923828, altitude : 48.66999816894531, lat : 364301343, lng : 1274000872}
+RC_CHANNELS_SCALED {time_boot_ms : 1191723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1191963, roll : -0.019025074318051338, pitch : 0.010797441005706787, yaw : 1.3661019802093506, rollspeed : 0.001389664364978671, pitchspeed : 0.0005062097334302962, yawspeed : -0.0006131044356152415}
+VFR_HUD {airspeed : 0.02200000174343586, groundspeed : 0.020083382725715637, heading : 78, throttle : 0, alt : 48.66999816894531, climb : -0.012448239140212536}
+AHRS2 {roll : -0.03216603025794029, pitch : -0.016231516376137733, yaw : 1.349640965461731, altitude : 48.61000061035156, lat : 364301343, lng : 1274000872}
+GLOBAL_POSITION_INT {time_boot_ms : 1192002, lat : 364301345, lon : 1274000871, alt : 48670, relative_alt : -89, vx : 0, vy : -2, vz : 1, hdg : 7828}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 131, voltage_battery : 6996, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4980, Vservo : 6058, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1192003093, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1192003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1192003202, xacc : -21, yacc : 35, zacc : -1001, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 35, ymag : -417, zmag : 353, id : 0, temperature : 3923}
+SCALED_IMU2 {time_boot_ms : 1192003, xacc : -13, yacc : 35, zacc : -1002, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 186, ymag : -351, zmag : 298, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1192003, press_abs : 1020.8272705078125, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1191833000, fix_type : 4, lat : 364301343, lon : 1274000872, alt : 34640, eph : 64, epv : 85, vel : 2, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54660, h_acc : 760, v_acc : 1062, vel_acc : 201, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491985986691, time_boot_ms : 1192022}
+AHRS {omegaIx : 0.002059636637568474, omegaIy : 0.0001557614014018327, omegaIz : 0.00026110102771781385, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.021137064322829247, error_yaw : 0.006366730201989412}
+HWSTATUS {Vcc : 4980, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.015048108994960785, pos_horiz_variance : 0.004936798010021448, pos_vert_variance : 0.014557533897459507, compass_variance : 0.024264324456453323, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1192023, x : -14.506519317626953, y : -3.270434856414795, z : 0.03001442924141884, vx : -0.00014860757801216096, vy : -0.020300427451729774, vz : 0.012774485163390636}
+VIBRATION {time_usec : 1192023257, vibration_x : 0.04063877463340759, vibration_y : 0.06882147490978241, vibration_z : 0.06480418890714645, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1192023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [6996, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+TIMESYNC {tc1 : 0, ts1 : 1192183270001}
+ATTITUDE {time_boot_ms : 1192222, roll : -0.018895002081990242, pitch : 0.01099389884620905, yaw : 1.3657687902450562, rollspeed : -0.0010959214996546507, pitchspeed : 4.608651215676218e-05, yawspeed : -0.0014314097352325916}
+VFR_HUD {airspeed : 0.05700000375509262, groundspeed : 0.01732826605439186, heading : 78, throttle : 0, alt : 48.65999984741211, climb : -0.010976448655128479}
+AHRS2 {roll : -0.032202187925577164, pitch : -0.01644834689795971, yaw : 1.3498058319091797, altitude : 48.78999710083008, lat : 364301343, lng : 1274000874}
+ATTITUDE {time_boot_ms : 1192463, roll : -0.019188174977898598, pitch : 0.010576637461781502, yaw : 1.3657065629959106, rollspeed : 0.0007917555049061775, pitchspeed : -0.00027437793323770165, yawspeed : 0.00042578400461934507}
+VFR_HUD {airspeed : 0.04500000178813934, groundspeed : 0.017443420365452766, heading : 78, throttle : 0, alt : 48.64999771118164, climb : -0.014651745557785034}
+AHRS2 {roll : -0.03291795030236244, pitch : -0.015343804843723774, yaw : 1.350327491760254, altitude : 48.689998626708984, lat : 364301344, lng : 1274000873}
+GLOBAL_POSITION_INT {time_boot_ms : 1192502, lat : 364301346, lon : 1274000872, alt : 48640, relative_alt : -110, vx : 0, vy : -1, vz : 1, hdg : 7824}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 137, voltage_battery : 7072, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4983, Vservo : 6092, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1192503163, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1192503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1731, chan4_raw : 1535, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1192503259, xacc : -20, yacc : 34, zacc : -999, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 35, ymag : -416, zmag : 353, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1192503, xacc : -12, yacc : 35, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 188, ymag : -351, zmag : 307, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1192503, press_abs : 1020.8178100585938, press_diff : 0.0, temperature : 3362, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1192433000, fix_type : 4, lat : 364301344, lon : 1274000873, alt : 34610, eph : 64, epv : 85, vel : 4, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54631, h_acc : 761, v_acc : 1064, vel_acc : 357, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491986467358, time_boot_ms : 1192503}
+AHRS {omegaIx : 0.002057933248579502, omegaIy : 0.00014278986782301217, omegaIz : 0.00024573379778303206, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.028162293136119843, error_yaw : 0.006486298982053995}
+HWSTATUS {Vcc : 4983, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.018536729738116264, pos_horiz_variance : 0.0038539471570402384, pos_vert_variance : 0.023941855877637863, compass_variance : 0.019141066819429398, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+ATTITUDE {time_boot_ms : 1192722, roll : -0.019311826676130295, pitch : 0.01062122080475092, yaw : 1.3655149936676025, rollspeed : 0.0005707147065550089, pitchspeed : -0.0008663118351250887, yawspeed : -0.0025920909829437733}
+VFR_HUD {airspeed : 0.06100000441074371, groundspeed : 0.01606827601790428, heading : 78, throttle : 0, alt : 48.62999725341797, climb : -0.015904011204838753}
+AHRS2 {roll : -0.03203749656677246, pitch : -0.0158182755112648, yaw : 1.3507155179977417, altitude : 48.61000061035156, lat : 364301344, lng : 1274000872}
+RC_CHANNELS_SCALED {time_boot_ms : 1192723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1192963, roll : -0.01932877115905285, pitch : 0.010600856505334377, yaw : 1.3651573657989502, rollspeed : 0.00014285638462752104, pitchspeed : 0.00012616963067557663, yawspeed : -3.033445682376623e-05}
+VFR_HUD {airspeed : 0.020000001415610313, groundspeed : 0.018344005569815636, heading : 78, throttle : 0, alt : 48.62999725341797, climb : -0.01741788536310196}
+AHRS2 {roll : -0.032100528478622437, pitch : -0.015015391632914543, yaw : 1.3508238792419434, altitude : 48.70000076293945, lat : 364301344, lng : 1274000872}
+GLOBAL_POSITION_INT {time_boot_ms : 1193002, lat : 364301345, lon : 1274000872, alt : 48630, relative_alt : -129, vx : 1, vy : -1, vz : 1, hdg : 7821}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 130, voltage_battery : 7082, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4911, Vservo : 6092, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1193003087, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1193003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1827, chan4_raw : 1536, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1193003182, xacc : -19, yacc : 33, zacc : -999, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 35, ymag : -418, zmag : 355, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1193003, xacc : -13, yacc : 33, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 1, xmag : 187, ymag : -349, zmag : 308, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1193003, press_abs : 1020.8172607421875, press_diff : 0.0, temperature : 3362, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1192833000, fix_type : 4, lat : 364301344, lon : 1274000872, alt : 34630, eph : 64, epv : 85, vel : 2, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54651, h_acc : 765, v_acc : 1068, vel_acc : 280, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491986986886, time_boot_ms : 1193023}
+AHRS {omegaIx : 0.002063632244244218, omegaIy : 0.00014680720050819218, omegaIz : 0.00023097608936950564, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.030526284128427505, error_yaw : 0.006011127959936857}
+HWSTATUS {Vcc : 4877, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.02654094807803631, pos_horiz_variance : 0.002448223764076829, pos_vert_variance : 0.01757788471877575, compass_variance : 0.020392805337905884, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1193023, x : -14.504204750061035, y : -3.267969846725464, z : 0.07048149406909943, vx : 0.014150703325867653, vy : -0.013080225326120853, vz : 0.01758793741464615}
+VIBRATION {time_usec : 1193023333, vibration_x : 0.029797330498695374, vibration_y : 0.06688081473112106, vibration_z : 0.051349274814128876, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1193023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7082, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1193222, roll : -0.01944071799516678, pitch : 0.010542644187808037, yaw : 1.364805817604065, rollspeed : 0.0006453640526160598, pitchspeed : -0.0026857357006520033, yawspeed : 0.0008225045748986304}
+VFR_HUD {airspeed : 0.027000000700354576, groundspeed : 0.020099733024835587, heading : 78, throttle : 0, alt : 48.619998931884766, climb : -0.018266228958964348}
+AHRS2 {roll : -0.032052140682935715, pitch : -0.015477968379855156, yaw : 1.3510692119598389, altitude : 48.61000061035156, lat : 364301343, lng : 1274000871}
+ATTITUDE {time_boot_ms : 1193463, roll : -0.019072547554969788, pitch : 0.010663206689059734, yaw : 1.3646410703659058, rollspeed : 0.00010052649304270744, pitchspeed : 0.0003711892059072852, yawspeed : 0.0006020523142069578}
+VFR_HUD {airspeed : 0.02500000037252903, groundspeed : 0.016598239541053772, heading : 78, throttle : 0, alt : 48.61000061035156, climb : -0.01725487783551216}
+AHRS2 {roll : -0.03165559843182564, pitch : -0.015115125104784966, yaw : 1.3514084815979004, altitude : 48.529998779296875, lat : 364301341, lng : 1274000870}
+GLOBAL_POSITION_INT {time_boot_ms : 1193502, lat : 364301345, lon : 1274000871, alt : 48610, relative_alt : -143, vx : 1, vy : -1, vz : 1, hdg : 7818}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 135, voltage_battery : 7084, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4983, Vservo : 6053, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1193503204, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1193503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1503, chan4_raw : 1535, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1193503303, xacc : -19, yacc : 33, zacc : -1000, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 35, ymag : -417, zmag : 354, id : 0, temperature : 3923}
+SCALED_IMU2 {time_boot_ms : 1193503, xacc : -11, yacc : 33, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 192, ymag : -350, zmag : 299, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1193503, press_abs : 1020.8365478515625, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1193433000, fix_type : 4, lat : 364301341, lon : 1274000870, alt : 34640, eph : 64, epv : 85, vel : 2, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54660, h_acc : 762, v_acc : 1071, vel_acc : 259, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491987467393, time_boot_ms : 1193503}
+AHRS {omegaIx : 0.0020773932337760925, omegaIy : 0.0001444942463422194, omegaIz : 0.0002168821229133755, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.022721800953149796, error_yaw : 0.005824992898851633}
+HWSTATUS {Vcc : 4983, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.022557003423571587, pos_horiz_variance : 0.0056830220855772495, pos_vert_variance : 0.00182615767698735, compass_variance : 0.01718089170753956, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1193523, x : -14.514302253723145, y : -3.2714953422546387, z : 0.08349459618330002, vx : 0.010563848540186882, vy : -0.011380571871995926, vz : 0.016877012327313423}
+VIBRATION {time_usec : 1193523163, vibration_x : 0.03097243420779705, vibration_y : 0.0507027804851532, vibration_z : 0.05030636116862297, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1193523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7084, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1193722, roll : -0.01878470554947853, pitch : 0.010874073021113873, yaw : 1.3642910718917847, rollspeed : -0.00020900601521134377, pitchspeed : 0.0011428057914599776, yawspeed : -0.0009503306937403977}
+VFR_HUD {airspeed : 0.03700000047683716, groundspeed : 0.014123428612947464, heading : 78, throttle : 0, alt : 48.61000061035156, climb : -0.016308113932609558}
+AHRS2 {roll : -0.03199012950062752, pitch : -0.015377542935311794, yaw : 1.3514975309371948, altitude : 48.61000061035156, lat : 364301339, lng : 1274000871}
+RC_CHANNELS_SCALED {time_boot_ms : 1193723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1193963, roll : -0.018884362652897835, pitch : 0.01060224138200283, yaw : 1.3640950918197632, rollspeed : 0.0002499219262972474, pitchspeed : -0.0002313092554686591, yawspeed : 8.026660361792892e-05}
+VFR_HUD {airspeed : 0.04800000041723251, groundspeed : 0.012807115912437439, heading : 78, throttle : 0, alt : 48.599998474121094, climb : -0.01724574714899063}
+AHRS2 {roll : -0.03229803591966629, pitch : -0.015622950159013271, yaw : 1.3516179323196411, altitude : 48.63999938964844, lat : 364301338, lng : 1274000872}
+GLOBAL_POSITION_INT {time_boot_ms : 1194002, lat : 364301343, lon : 1274000871, alt : 48600, relative_alt : -158, vx : 0, vy : 0, vz : 1, hdg : 7815}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 133, voltage_battery : 7153, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5008, Vservo : 6068, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1194003087, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1194003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1194003183, xacc : -18, yacc : 33, zacc : -1001, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 37, ymag : -421, zmag : 352, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1194003, xacc : -10, yacc : 33, zacc : -1002, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 194, ymag : -350, zmag : 302, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1194003, press_abs : 1020.8247680664062, press_diff : 0.0, temperature : 3362, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1193833000, fix_type : 4, lat : 364301338, lon : 1274000871, alt : 34670, eph : 64, epv : 85, vel : 4, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54691, h_acc : 753, v_acc : 1051, vel_acc : 205, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491987986664, time_boot_ms : 1194022}
+AHRS {omegaIx : 0.0020848140120506287, omegaIy : 0.0001415811711922288, omegaIz : 0.00020114525977987796, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.026137206703424454, error_yaw : 0.002646788489073515}
+HWSTATUS {Vcc : 5008, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.026372669264674187, pos_horiz_variance : 0.009746569208800793, pos_vert_variance : 0.027316102758049965, compass_variance : 0.023586397990584373, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1194023, x : -14.529266357421875, y : -3.273195505142212, z : 0.09912710636854172, vx : 0.008277651853859425, vy : -0.008898889645934105, vz : 0.01708061620593071}
+VIBRATION {time_usec : 1194023199, vibration_x : 0.03334210813045502, vibration_y : 0.05072356015443802, vibration_z : 0.06319718062877655, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1194023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7153, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1194222, roll : -0.019119298085570335, pitch : 0.010721934959292412, yaw : 1.3637844324111938, rollspeed : -0.0005562556907534599, pitchspeed : 0.0007398031302727759, yawspeed : 0.0005078411777503788}
+VFR_HUD {airspeed : 0.03800000250339508, groundspeed : 0.010911336168646812, heading : 78, throttle : 0, alt : 48.59000015258789, climb : -0.01797836273908615}
+AHRS2 {roll : -0.032592300325632095, pitch : -0.015300091356039047, yaw : 1.3516409397125244, altitude : 48.55999755859375, lat : 364301336, lng : 1274000871}
+ATTITUDE {time_boot_ms : 1194463, roll : -0.01913805678486824, pitch : 0.010466056875884533, yaw : 1.3633908033370972, rollspeed : 0.0016105958493426442, pitchspeed : -0.0009936587885022163, yawspeed : -0.0026125761214643717}
+VFR_HUD {airspeed : 0.03700000047683716, groundspeed : 0.008227460086345673, heading : 78, throttle : 0, alt : 48.57999801635742, climb : -0.018366539850831032}
+AHRS2 {roll : -0.03364579379558563, pitch : -0.01629405841231346, yaw : 1.3515359163284302, altitude : 48.70000076293945, lat : 364301335, lng : 1274000871}
+GLOBAL_POSITION_INT {time_boot_ms : 1194502, lat : 364301342, lon : 1274000871, alt : 48580, relative_alt : -177, vx : 0, vy : 0, vz : 1, hdg : 7812}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 135, voltage_battery : 7176, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4875, Vservo : 6072, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1194503176, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1194503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1537, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1194503292, xacc : -20, yacc : 28, zacc : -999, xgyro : 0, ygyro : 0, zgyro : 1, xmag : 38, ymag : -421, zmag : 351, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1194503, xacc : -13, yacc : 26, zacc : -999, xgyro : 0, ygyro : 0, zgyro : 2, xmag : 194, ymag : -351, zmag : 304, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1194503, press_abs : 1020.8173828125, press_diff : 0.0, temperature : 3362, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1194433000, fix_type : 4, lat : 364301335, lon : 1274000871, alt : 34690, eph : 64, epv : 85, vel : 3, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54710, h_acc : 741, v_acc : 1025, vel_acc : 198, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491988467374, time_boot_ms : 1194503}
+AHRS {omegaIx : 0.002094629453495145, omegaIy : 0.0001387397787766531, omegaIz : 0.0001848843676270917, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.03020036779344082, error_yaw : 0.0016234666109085083}
+HWSTATUS {Vcc : 4875, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.02045542187988758, pos_horiz_variance : 0.012684551067650318, pos_vert_variance : 0.013421567156910896, compass_variance : 0.023204702883958817, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1194523, x : -14.548090934753418, y : -3.27351713180542, z : 0.11792729794979095, vx : 0.006917992141097784, vy : -0.007721982896327972, vz : 0.019459154456853867}
+VIBRATION {time_usec : 1194523150, vibration_x : 0.040831536054611206, vibration_y : 0.17462220788002014, vibration_z : 0.08712544292211533, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1194523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7176, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1194722, roll : -0.018885653465986252, pitch : 0.010520385578274727, yaw : 1.3631837368011475, rollspeed : -0.0007436270825564861, pitchspeed : -0.0008151864749379456, yawspeed : 7.559343066532165e-05}
+VFR_HUD {airspeed : 0.015000000596046448, groundspeed : 0.004329233895987272, heading : 78, throttle : 0, alt : 48.56999969482422, climb : -0.017751600593328476}
+AHRS2 {roll : -0.03248387947678566, pitch : -0.016152596101164818, yaw : 1.3516837358474731, altitude : 48.47999954223633, lat : 364301334, lng : 1274000871}
+RC_CHANNELS_SCALED {time_boot_ms : 1194723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1194963, roll : -0.018722617998719215, pitch : 0.010633278638124466, yaw : 1.3627442121505737, rollspeed : 0.00229736533947289, pitchspeed : 0.0012661149958148599, yawspeed : -0.0006422520382329822}
+VFR_HUD {airspeed : 0.0560000017285347, groundspeed : 0.004218557849526405, heading : 78, throttle : 0, alt : 48.56999969482422, climb : -0.016992026939988136}
+AHRS2 {roll : -0.03320808336138725, pitch : -0.015762781724333763, yaw : 1.351535439491272, altitude : 48.5, lat : 364301333, lng : 1274000871}
+GLOBAL_POSITION_INT {time_boot_ms : 1195002, lat : 364301340, lon : 1274000871, alt : 48570, relative_alt : -187, vx : 0, vy : 0, vz : 1, hdg : 7809}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 132, voltage_battery : 7047, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5009, Vservo : 6063, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1195003086, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1195003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1195003182, xacc : -21, yacc : 37, zacc : -1002, xgyro : -2, ygyro : -1, zgyro : 0, xmag : 38, ymag : -422, zmag : 353, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1195003, xacc : -14, yacc : 38, zacc : -1004, xgyro : -1, ygyro : -1, zgyro : 0, xmag : 188, ymag : -352, zmag : 303, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1195003, press_abs : 1020.8397216796875, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1194833000, fix_type : 4, lat : 364301332, lon : 1274000871, alt : 34740, eph : 64, epv : 85, vel : 5, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54761, h_acc : 732, v_acc : 1006, vel_acc : 163, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491988986933, time_boot_ms : 1195023}
+AHRS {omegaIx : 0.0020942604169249535, omegaIy : 0.00013726043107453734, omegaIz : 0.00016848862287588418, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.026425564661622047, error_yaw : 0.001377749489620328}
+HWSTATUS {Vcc : 5008, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.014805976301431656, pos_horiz_variance : 0.01581258699297905, pos_vert_variance : 0.004116912838071585, compass_variance : 0.024344487115740776, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1195023, x : -14.56680679321289, y : -3.2693629264831543, z : 0.12734685838222504, vx : 0.005214388016611338, vy : -0.0022060973569750786, vz : 0.01698731817305088}
+VIBRATION {time_usec : 1195023517, vibration_x : 0.049647312611341476, vibration_y : 0.10124045610427856, vibration_z : 0.0822431892156601, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1195023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7047, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1195222, roll : -0.01895405910909176, pitch : 0.01068065594881773, yaw : 1.362524390220642, rollspeed : -0.001717648934572935, pitchspeed : 0.0006321389228105545, yawspeed : 0.002958092140033841}
+VFR_HUD {airspeed : 0.010000000707805157, groundspeed : 0.006095566786825657, heading : 78, throttle : 0, alt : 48.55999755859375, climb : -0.016171298921108246}
+AHRS2 {roll : -0.03306988999247551, pitch : -0.015684477984905243, yaw : 1.351631999015808, altitude : 48.41999816894531, lat : 364301332, lng : 1274000871}
+ATTITUDE {time_boot_ms : 1195463, roll : -0.01883922889828682, pitch : 0.010453426279127598, yaw : 1.362336277961731, rollspeed : 0.0004900606581941247, pitchspeed : -0.0003078140434809029, yawspeed : 0.0014181403676047921}
+VFR_HUD {airspeed : 0.01600000075995922, groundspeed : 0.003760932246223092, heading : 78, throttle : 0, alt : 48.55999755859375, climb : -0.01619359850883484}
+AHRS2 {roll : -0.03298830986022949, pitch : -0.015897339209914207, yaw : 1.351698637008667, altitude : 48.65999984741211, lat : 364301330, lng : 1274000873}
+GLOBAL_POSITION_INT {time_boot_ms : 1195502, lat : 364301338, lon : 1274000871, alt : 48560, relative_alt : -198, vx : 0, vy : 0, vz : 1, hdg : 7804}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 137, voltage_battery : 7177, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5003, Vservo : 6053, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1195503197, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1195503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1537, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1195503296, xacc : -20, yacc : 32, zacc : -999, xgyro : -1, ygyro : 0, zgyro : 0, xmag : 38, ymag : -420, zmag : 350, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1195503, xacc : -11, yacc : 33, zacc : -999, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 194, ymag : -348, zmag : 305, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1195503, press_abs : 1020.821533203125, press_diff : 0.0, temperature : 3362, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1195433000, fix_type : 4, lat : 364301330, lon : 1274000873, alt : 34780, eph : 64, epv : 85, vel : 1, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54801, h_acc : 721, v_acc : 986, vel_acc : 145, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491989467331, time_boot_ms : 1195503}
+AHRS {omegaIx : 0.002103991573676467, omegaIy : 0.00013511358702089638, omegaIz : 0.00015270031872205436, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.02170068398118019, error_yaw : 0.0013863572385162115}
+HWSTATUS {Vcc : 5009, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.0065836310386657715, pos_horiz_variance : 0.016682229936122894, pos_vert_variance : 0.0027529229409992695, compass_variance : 0.02068859338760376, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1195523, x : -14.587048530578613, y : -3.266425132751465, z : 0.13924454152584076, vx : 0.0011943081626668572, vy : -0.0008055762737058103, vz : 0.01516771875321865}
+VIBRATION {time_usec : 1195523198, vibration_x : 0.033374570310115814, vibration_y : 0.06992645561695099, vibration_z : 0.04436609148979187, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1195523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7177, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1195722, roll : -0.018752623349428177, pitch : 0.01049030665308237, yaw : 1.3620481491088867, rollspeed : -0.00044047972187399864, pitchspeed : -0.0016307772602885962, yawspeed : 0.0010930895805358887}
+VFR_HUD {airspeed : 0.05300000309944153, groundspeed : 0.0008993280353024602, heading : 78, throttle : 0, alt : 48.54999923706055, climb : -0.014726078137755394}
+AHRS2 {roll : -0.03228200972080231, pitch : -0.015665018931031227, yaw : 1.3517392873764038, altitude : 48.71999740600586, lat : 364301328, lng : 1274000872}
+RC_CHANNELS_SCALED {time_boot_ms : 1195723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1195963, roll : -0.018531251698732376, pitch : 0.010550539009273052, yaw : 1.3616219758987427, rollspeed : -0.0005170770455151796, pitchspeed : 7.836371514713392e-05, yawspeed : 0.0003391135251149535}
+VFR_HUD {airspeed : 0.01900000125169754, groundspeed : 0.004144852049648762, heading : 78, throttle : 0, alt : 48.55999755859375, climb : -0.012373621575534344}
+AHRS2 {roll : -0.0323546826839447, pitch : -0.015438408590853214, yaw : 1.3516290187835693, altitude : 48.599998474121094, lat : 364301328, lng : 1274000872}
+GLOBAL_POSITION_INT {time_boot_ms : 1196003, lat : 364301336, lon : 1274000871, alt : 48560, relative_alt : -194, vx : 0, vy : 0, vz : 1, hdg : 7801}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 133, voltage_battery : 7160, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4932, Vservo : 6072, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1196003298, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1196003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1537, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1196003524, xacc : -18, yacc : 31, zacc : -1000, xgyro : -1, ygyro : 0, zgyro : 0, xmag : 38, ymag : -421, zmag : 353, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1196003, xacc : -11, yacc : 33, zacc : -1002, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 195, ymag : -350, zmag : 305, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1196003, press_abs : 1020.8284912109375, press_diff : 0.0, temperature : 3362, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1195833000, fix_type : 4, lat : 364301328, lon : 1274000872, alt : 34800, eph : 64, epv : 85, vel : 1, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54820, h_acc : 714, v_acc : 974, vel_acc : 225, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491989987035, time_boot_ms : 1196023}
+AHRS {omegaIx : 0.002110876375809312, omegaIy : 0.00014042542898096144, omegaIz : 0.00013734784442931414, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.0236849132925272, error_yaw : 0.0013549667783081532}
+HWSTATUS {Vcc : 4893, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.02652677893638611, pos_horiz_variance : 0.01578575186431408, pos_vert_variance : 0.006219673436135054, compass_variance : 0.021454090252518654, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1196023, x : -14.61709976196289, y : -3.266329288482666, z : 0.13469888269901276, vx : -0.004594231024384499, vy : -0.0014775305753573775, vz : 0.01151867862790823}
+VIBRATION {time_usec : 1196023559, vibration_x : 0.03735090792179108, vibration_y : 0.041295040398836136, vibration_z : 0.05880878493189812, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1196023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7160, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1196223, roll : -0.018575109541416168, pitch : 0.010609150864183903, yaw : 1.3612077236175537, rollspeed : 0.0012635840103030205, pitchspeed : -0.0023761363700032234, yawspeed : 0.0009291822789236903}
+VFR_HUD {airspeed : 0.03700000047683716, groundspeed : 0.0051932004280388355, heading : 77, throttle : 0, alt : 48.55999755859375, climb : -0.01071836892515421}
+AHRS2 {roll : -0.031953200697898865, pitch : -0.015969501808285713, yaw : 1.3514403104782104, altitude : 48.55999755859375, lat : 364301328, lng : 1274000873}
+ATTITUDE {time_boot_ms : 1196463, roll : -0.018251098692417145, pitch : 0.010415530763566494, yaw : 1.361042857170105, rollspeed : 0.00013622082769870758, pitchspeed : 0.0002763165975920856, yawspeed : 0.0005354632157832384}
+VFR_HUD {airspeed : 0.018000001087784767, groundspeed : 0.011457439512014389, heading : 77, throttle : 0, alt : 48.55999755859375, climb : -0.010192322544753551}
+AHRS2 {roll : -0.031762734055519104, pitch : -0.016325196251273155, yaw : 1.3515177965164185, altitude : 48.599998474121094, lat : 364301327, lng : 1274000875}
+GLOBAL_POSITION_INT {time_boot_ms : 1196503, lat : 364301333, lon : 1274000872, alt : 48560, relative_alt : -195, vx : -1, vy : 0, vz : 1, hdg : 7797}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 141, voltage_battery : 7183, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5011, Vservo : 5952, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1196503312, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1196503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1537, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1196503468, xacc : -19, yacc : 33, zacc : -999, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 39, ymag : -421, zmag : 351, id : 0, temperature : 3925}
+SCALED_IMU2 {time_boot_ms : 1196503, xacc : -11, yacc : 32, zacc : -1000, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 195, ymag : -350, zmag : 303, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1196503, press_abs : 1020.8287963867188, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1196433000, fix_type : 4, lat : 364301327, lon : 1274000875, alt : 34840, eph : 64, epv : 85, vel : 1, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54860, h_acc : 704, v_acc : 956, vel_acc : 214, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491990467499, time_boot_ms : 1196503}
+AHRS {omegaIx : 0.0021200785413384438, omegaIy : 0.00013528722047340125, omegaIz : 0.00012182487989775836, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.020979611203074455, error_yaw : 0.0016715646488592029}
+HWSTATUS {Vcc : 5011, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.013971064239740372, pos_horiz_variance : 0.012755163945257664, pos_vert_variance : 0.011990654282271862, compass_variance : 0.020281439647078514, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1196523, x : -14.648404121398926, y : -3.2582099437713623, z : 0.1356467455625534, vx : -0.012177437543869019, vy : 0.0025734410155564547, vz : 0.009792867116630077}
+VIBRATION {time_usec : 1196523184, vibration_x : 0.03220226243138313, vibration_y : 0.0676564946770668, vibration_z : 0.058262135833501816, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1196523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7183, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1196722, roll : -0.018592165783047676, pitch : 0.010502810589969158, yaw : 1.3606607913970947, rollspeed : -0.00024207169190049171, pitchspeed : 0.0002828123979270458, yawspeed : 0.00018733576871454716}
+VFR_HUD {airspeed : 0.03500000014901161, groundspeed : 0.013021598570048809, heading : 77, throttle : 0, alt : 48.55999755859375, climb : -0.009750415571033955}
+AHRS2 {roll : -0.032933980226516724, pitch : -0.016031358391046524, yaw : 1.3514829874038696, altitude : 48.65999984741211, lat : 364301326, lng : 1274000876}
+RC_CHANNELS_SCALED {time_boot_ms : 1196723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1196963, roll : -0.01845502108335495, pitch : 0.010395822115242481, yaw : 1.3603712320327759, rollspeed : 0.0019417983712628484, pitchspeed : -0.0009826086461544037, yawspeed : -0.001704716356471181}
+VFR_HUD {airspeed : 0.0430000014603138, groundspeed : 0.014550174586474895, heading : 77, throttle : 0, alt : 48.54999923706055, climb : -0.011772924102842808}
+AHRS2 {roll : -0.0327204205095768, pitch : -0.01571042649447918, yaw : 1.3514348268508911, altitude : 48.63999938964844, lat : 364301327, lng : 1274000876}
+GLOBAL_POSITION_INT {time_boot_ms : 1197002, lat : 364301331, lon : 1274000873, alt : 48550, relative_alt : -204, vx : -1, vy : 0, vz : 1, hdg : 7794}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 137, voltage_battery : 7160, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5008, Vservo : 6092, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1197003260, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1197003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1197003320, xacc : -20, yacc : 33, zacc : -1000, xgyro : -1, ygyro : 0, zgyro : 0, xmag : 38, ymag : -421, zmag : 351, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1197003, xacc : -13, yacc : 32, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 192, ymag : -348, zmag : 304, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1197003, press_abs : 1020.823486328125, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1196833000, fix_type : 4, lat : 364301327, lon : 1274000877, alt : 34910, eph : 64, epv : 85, vel : 4, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54931, h_acc : 697, v_acc : 945, vel_acc : 212, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491990986908, time_boot_ms : 1197023}
+AHRS {omegaIx : 0.002118897857144475, omegaIy : 0.00013744115130975842, omegaIz : 0.00010688717156881467, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.020325567573308945, error_yaw : 0.0014959925319999456}
+HWSTATUS {Vcc : 5006, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.02319839969277382, pos_horiz_variance : 0.011642498895525932, pos_vert_variance : 0.0032501383684575558, compass_variance : 0.021539699286222458, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1197023, x : -14.669172286987305, y : -3.2484166622161865, z : 0.14547650516033173, vx : -0.011474021710455418, vy : 0.005665452219545841, vz : 0.012809059582650661}
+VIBRATION {time_usec : 1197023474, vibration_x : 0.03488895297050476, vibration_y : 0.08301865309476852, vibration_z : 0.04672505706548691, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1197023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7160, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1197222, roll : -0.018829109147191048, pitch : 0.010624355636537075, yaw : 1.3601471185684204, rollspeed : -0.0015672433655709028, pitchspeed : 0.00045604744809679687, yawspeed : 0.00013187638251110911}
+VFR_HUD {airspeed : 0.02500000037252903, groundspeed : 0.01544173527508974, heading : 77, throttle : 0, alt : 48.54999923706055, climb : -0.012287391349673271}
+AHRS2 {roll : -0.03255666792392731, pitch : -0.015902910381555557, yaw : 1.3514838218688965, altitude : 48.459999084472656, lat : 364301326, lng : 1274000877}
+ATTITUDE {time_boot_ms : 1197463, roll : -0.01838175766170025, pitch : 0.010352497920393944, yaw : 1.3599692583084106, rollspeed : 0.000756732071749866, pitchspeed : -0.0007626195438206196, yawspeed : 0.0008676745928823948}
+VFR_HUD {airspeed : 0.032999999821186066, groundspeed : 0.015474611893296242, heading : 77, throttle : 0, alt : 48.53999710083008, climb : -0.012447251006960869}
+AHRS2 {roll : -0.03276551887392998, pitch : -0.016524478793144226, yaw : 1.3515727519989014, altitude : 48.57999801635742, lat : 364301327, lng : 1274000878}
+GLOBAL_POSITION_INT {time_boot_ms : 1197503, lat : 364301329, lon : 1274000874, alt : 48540, relative_alt : -213, vx : -1, vy : 1, vz : 1, hdg : 7791}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 143, voltage_battery : 7171, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4872, Vservo : 6046, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1197503361, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1197503, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1537, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1197503517, xacc : -20, yacc : 31, zacc : -999, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 38, ymag : -421, zmag : 351, id : 0, temperature : 3924}
+SCALED_IMU2 {time_boot_ms : 1197503, xacc : -13, yacc : 32, zacc : -1002, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 190, ymag : -348, zmag : 306, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1197503, press_abs : 1020.8306884765625, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1197433000, fix_type : 4, lat : 364301327, lon : 1274000878, alt : 34880, eph : 64, epv : 85, vel : 3, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54901, h_acc : 690, v_acc : 932, vel_acc : 220, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491991467549, time_boot_ms : 1197503}
+AHRS {omegaIx : 0.0021184717770665884, omegaIy : 0.00012809022155124694, omegaIz : 9.198056068271399e-05, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.017864253371953964, error_yaw : 0.00111189519520849}
+HWSTATUS {Vcc : 4872, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.014500115066766739, pos_horiz_variance : 0.008221099153161049, pos_vert_variance : 0.002114892238751054, compass_variance : 0.020750688388943672, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1197523, x : -14.684011459350586, y : -3.2331864833831787, z : 0.15372642874717712, vx : -0.011482357047498226, vy : 0.010934348218142986, vz : 0.011985475197434425}
+VIBRATION {time_usec : 1197523329, vibration_x : 0.030898278579115868, vibration_y : 0.06291253864765167, vibration_z : 0.05224836245179176, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1197523, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7171, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1197722, roll : -0.018637020140886307, pitch : 0.010241114534437656, yaw : 1.3597776889801025, rollspeed : -0.00038191257044672966, pitchspeed : 0.00033201370388269424, yawspeed : 0.0026727437507361174}
+VFR_HUD {airspeed : 0.017000000923871994, groundspeed : 0.01576307974755764, heading : 77, throttle : 0, alt : 48.53999710083008, climb : -0.012518107891082764}
+AHRS2 {roll : -0.032885003834962845, pitch : -0.016336828470230103, yaw : 1.3516994714736938, altitude : 48.64999771118164, lat : 364301327, lng : 1274000878}
+RC_CHANNELS_SCALED {time_boot_ms : 1197723, port : 0, chan1_scaled : 0, chan2_scaled : 0, chan3_scaled : 0, chan4_scaled : 0, chan5_scaled : 0, chan6_scaled : 0, chan7_scaled : 0, chan8_scaled : 0, rssi : 255}
+HEARTBEAT {type : 10, autopilot : 3, base_mode : 137, custom_mode : 10, system_status : 4, mavlink_version : 3}
+ATTITUDE {time_boot_ms : 1197963, roll : -0.018588650971651077, pitch : 0.010394548065960407, yaw : 1.359342098236084, rollspeed : 0.0003065635683014989, pitchspeed : -0.00011545936285983771, yawspeed : 0.0004810753744095564}
+VFR_HUD {airspeed : 0.03700000047683716, groundspeed : 0.01735670678317547, heading : 77, throttle : 0, alt : 48.53999710083008, climb : -0.010710367932915688}
+AHRS2 {roll : -0.03237152472138405, pitch : -0.015809113159775734, yaw : 1.351543664932251, altitude : 48.77000045776367, lat : 364301327, lng : 1274000878}
+GLOBAL_POSITION_INT {time_boot_ms : 1198002, lat : 364301329, lon : 1274000876, alt : 48540, relative_alt : -211, vx : 0, vy : 1, vz : 0, hdg : 7788}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 137, voltage_battery : 7160, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 5004, Vservo : 6046, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 220952}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1198003208, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+RC_CHANNELS {time_boot_ms : 1198003, chancount : 16, chan1_raw : 1483, chan2_raw : 1496, chan3_raw : 1496, chan4_raw : 1538, chan5_raw : 1900, chan6_raw : 1100, chan7_raw : 1100, chan8_raw : 1500, chan9_raw : 1900, chan10_raw : 1500, chan11_raw : 1500, chan12_raw : 1500, chan13_raw : 1500, chan14_raw : 1500, chan15_raw : 1500, chan16_raw : 1500, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+RAW_IMU {time_usec : 1198003309, xacc : -20, yacc : 33, zacc : -1000, xgyro : -2, ygyro : 0, zgyro : 0, xmag : 38, ymag : -421, zmag : 351, id : 0, temperature : 3925}
+SCALED_IMU2 {time_boot_ms : 1198003, xacc : -12, yacc : 33, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 192, ymag : -349, zmag : 302, temperature : 2900}
+SCALED_PRESSURE {time_boot_ms : 1198003, press_abs : 1020.8095703125, press_diff : 0.0, temperature : 3363, temperature_press_diff : 0}
+GPS_RAW_INT {time_usec : 1197833000, fix_type : 4, lat : 364301327, lon : 1274000878, alt : 34880, eph : 64, epv : 85, vel : 3, cog : 14782, satellites_visible : 18, alt_ellipsoid : 54900, h_acc : 686, v_acc : 923, vel_acc : 228, hdg_acc : 0, yaw : 0}
+SYSTEM_TIME {time_unix_usec : 1680491991986851, time_boot_ms : 1198023}
+AHRS {omegaIx : 0.002119242213666439, omegaIy : 0.00013168054283596575, omegaIz : 7.748721691314131e-05, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.017533084377646446, error_yaw : 0.001299709314480424}
+HWSTATUS {Vcc : 5006, I2Cerr : 0}
+MOUNT_STATUS {target_system : 0, target_component : 0, pointing_a : 0, pointing_b : 0, pointing_c : 0, mount_mode : 3}
+EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.025452135130763054, pos_horiz_variance : 0.006065097637474537, pos_vert_variance : 0.005868405569344759, compass_variance : 0.020797180011868477, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+LOCAL_POSITION_NED {time_boot_ms : 1198023, x : -14.690869331359863, y : -3.218458414077759, z : 0.15170574188232422, vx : -0.007871713489294052, vy : 0.015344854444265366, vz : 0.009787150658667088}
+VIBRATION {time_usec : 1198023328, vibration_x : 0.03142558038234711, vibration_y : 0.043199386447668076, vibration_z : 0.04676642641425133, clipping_0 : 19, clipping_1 : 13, clipping_2 : 0}
+POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1198023, coordinate_frame : 0, type_mask : 65016, lat_int : 364301307, lon_int : 1274000597, alt : 48.279998779296875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [7160, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+ATTITUDE {time_boot_ms : 1198222, roll : -0.018631918355822563, pitch : 0.010578573681414127, yaw : 1.3590373992919922, rollspeed : -0.0012155550066381693, pitchspeed : 0.0008375258767046034, yawspeed : 0.002968935761600733}
+VFR_HUD {airspeed : 0.018000001087784767, groundspeed : 0.015968406572937965, heading : 77, throttle : 0, alt : 48.54999923706055, climb : -0.00901185441762209}
+AHRS2 {roll : -0.03215945512056351, pitch : -0.01585695892572403, yaw : 1.3515290021896362, altitude : 48.56999969482422, lat : 364301327, lng : 1274000878}
+ATTITUDE {time_boot_ms : 1198463, roll : -0.01855797879397869, pitch : 0.010503261350095272, yaw : 1.3588865995407104, rollspeed : -0.0002199497539550066, pitchspeed : 2.826290437951684e-05, yawspeed : 0.0005819001817144454}
+VFR_HUD {airspeed : 0.03200000151991844, groundspeed : 0.016460459679365158, heading : 77, throttle : 0, alt : 48.54999923706055, climb : -0.009911111555993557}
+AHRS2 {roll : -0.032674528658390045, pitch : -0.01541111059486866, yaw : 1.35162353515625, altitude : 48.68000030517578, lat : 364301329, lng : 1274000878}
+GLOBAL_POSITION_INT {time_boot_ms : 1198503, lat : 364301328, lon : 1274000877, alt : 48550, relative_alt : -206, vx : 0, vy : 1, vz : 0, hdg : 7784}
+SYS_STATUS {onboard_control_sensors_present : 321969199, onboard_control_sensors_enabled : 52485167, onboard_control_sensors_health : 53533999, load : 142, voltage_battery : 7163, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0}
+POWER_STATUS {Vcc : 4999, Vservo : 6063, flags : 1}
+MEMINFO {brkval : 0, freemem : 65535, freemem32 : 221112}
+NAV_CONTROLLER_OUTPUT {nav_roll : 0.0, nav_pitch : 0.0, nav_bearing : 256, target_bearing : 90, wp_dist : 2, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+MISSION_CURRENT {seq : 4}
+SERVO_OUTPUT_RAW {time_usec : 1198503329, port : 0, servo1_raw : 1500, servo2_raw : 0, servo3_raw : 1500, servo4_raw : 0, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}

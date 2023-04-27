@@ -1,0 +1,713 @@
+[
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Mission: 1 WP"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_WARNING",
+      "text": "Warning: Arming Checks Disabled"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Throttle armed"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 1
+    },
+    {
+      "message-type": "MISSION_ITEM_REACHED",
+      "seq": "Waypoint (Mission item) 1 has been reached"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Reached waypoint #1"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Mission: 2 LoitTime"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Reached waypoint #2. Loiter for 5 seconds"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 2
+    },
+    {
+      "message-type": "MISSION_ITEM_REACHED",
+      "seq": "Waypoint (Mission item) 2 has been reached"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_WARNING",
+      "text": "Finished active loiter"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Mission: 3 WP"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 3
+    },
+    {
+      "message-type": "MISSION_ITEM_REACHED",
+      "seq": "Waypoint (Mission item) 3 has been reached"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Reached waypoint #3"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Mission: 4 LoitUnlim"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_INFO",
+      "text": "Reached waypoint #4"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF3 lane switch 1"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF3 lane switch 0"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF variance"
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF failsafe"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF3 lane switch 1"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF failsafe cleared"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF3 lane switch 0"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "STATUSTEXT",
+      "severity": "MAV_SEVERITY_CRITICAL",
+      "text": "EKF variance"
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    },
+    {
+      "message-type": "MISSION_CURRENT",
+      "seq": 4
+    }
+  ]

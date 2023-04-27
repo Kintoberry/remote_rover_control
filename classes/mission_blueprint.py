@@ -14,9 +14,8 @@ class MissionBlueprint:
         self.mission_items.append(item)
 
     def _save_waypoints(self):
-        self.waypoints = [item for item in self.mission_items if item.command == mavutil.mavlink.MAV_CMD_NAV_WAYPOINT]
+        self.waypoints = sorted([item for item in self.mission_items if item.command == mavutil.mavlink.MAV_CMD_NAV_WAYPOINT], key=lambda wp: wp.seq)
     
-   
     def get_commands_related_to_waypoints(self):
         waypoint_commands = [
             mavutil.mavlink.MAV_CMD_NAV_LOITER_UNLIM,
@@ -26,6 +25,30 @@ class MissionBlueprint:
         ]
         return [item for item in self.mission_items if item.command in waypoint_commands]
     
+    def is_waypoint(self, seq) -> bool:
+        for waypoint in self.waypoints:
+            if waypoint.seq == seq:
+                return True
+        return False
+    
+    def get_next_waypoint(self, seq):
+        for waypoint in self.waypoints:
+            if waypoint.seq > seq:
+                return waypoint.seq
+        return -1
+    
+    def get_first_waypoint(self) -> int:
+        if len(self.waypoints) > 0:
+            return self.waypoints[0].seq
+        else:
+            raise IndexError("The waypoints list is empty, no first waypoint available.")
+    
+    def get_final_waypoint(self) -> int:
+        if len(self.waypoints) > 0:
+            return self.waypoints[-1].seq
+        else:
+            raise IndexError("The waypoints list is empty, no final waypoint available.")
+
     def download_mission(self, rover_serial, force=False):
         if not force and self.mission_downloaded:
             raise MissionAlreadyDownloadedException("Missions is already downloaded. Use `force` parameter for re-download.")

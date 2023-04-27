@@ -14,58 +14,14 @@ from classes.custom_exceptions import SyncCommandFailedException
 sensor_measurement_finished_event = threading.Event()
 
 def worker_mission_operation(rover, terminate_event, queue_manager, mission_manager):
-    mission_status_dict = {
-        'current_wp': 0,
-        'target_wp': 1,
-        'mission_item_num': 0,
-        'loiter': False,
-        'mission_status': "IDLE",
-        'possible_mission_status': [
-            "IDLE (PRIOR TO MISSION)",
-            "MOVING TO TARGET WAYPOINT",
-            "LOITER UNLIMITED",
-            "LOITER LIMITED TIME",
-            "MISSION COMPLETE",
-        ]
-    }
-    
     while not terminate_event.is_set():
-        mission_msg_dict = None
+        mission_msg = None
         try:
             mission_msg = queue_manager.get("mission_message", block=True, timeout=1)
-            mission_msg_dict = mission_msg.to_dict()
-            # print("mission_msg_dict: ", mission_msg_dict)
-            # print("type(mission_msg): ", type(mission_msg))
-            # print("mission_msg_dict: ", mission_msg_dict)
-            # print("type(mission_msg_dict: ", type(mission_msg_dict))
         except queue.Empty:
             continue
-        try:
-            if mission_msg_dict['mavpackettype'] == "MISSION_CURRENT":
-                mission_status_dict['target_wp'] = mission_msg_dict['seq']
-            elif mission_msg_dict['mavpackettype'] == "MISSION_ITEM_RECHEAD":
-                print("capture mission item reached")
-                mission_status_dict['current_wp'] = mission_msg_dict['seq']
-                # TODO: target_wp may not be +1 of 'current_wp'. `current_wp + 1` may be next MAV_CMD. Need to fix this.
-                mission_status_dict['target_wp'] = mission_msg_dict['seq'] + 1
-            elif mission_msg_dict['mavpackettype'] == "STATUSTEXT":
-                is_unlim_loiter, mission_item_num = is_unlimited_loiter_in_progress(mission_msg_dict['text'])
-                if is_unlim_loiter:
-                    print("Unlim lotering!!")
-                    queue_manager.put("measurement_request", {"action": "START", 'mission_item_num': mission_item_num}, block=True)
-                    mission_status_dict['loiter'] = True 
-                    mission_status_dict['mission_item_num'] = mission_item_num
-
-                else:
-                    mission_status_dict['loiter'] = False
-        except KeyError:
-            # TODO: use logger here instead
-            print("'mavpackettype' key doesn't exist.")
-            continue
-        except Exception as e:
-            print("Unknown error has ocurred while trying to access 'mavpackettype' key.")
-            continue
-        # print(json.dumps(mission_msg_dict, indent=2))
+        mission_manager.update_status(mission_msg)
+        
         
 def is_unlimited_loiter_in_progress2(statustext_text) -> Tuple[bool, int]:
     # to parse the value of 'text' in 'STATUSTEXT' message

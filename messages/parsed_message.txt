@@ -1,0 +1,502 @@
+// 가다가 배터리 전원 꺼짐
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.08000000566244125,
+    "groundspeed": 0.028400683775544167,
+    "heading": "164 degrees (North = 0)",
+    "throttle": "0% (throttle setting)",
+    "alt": 33.880001068115234,
+    "climb": 0.04120124876499176
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.0430000014603138,
+    "groundspeed": 0.02995944768190384,
+    "heading": "164 degrees (North = 0)",
+    "throttle": "0% (throttle setting)",
+    "alt": 33.880001068115234,
+    "climb": 0.04069412872195244
+}
+{
+    "message-type": "COMMAND_ACK",
+    "command": "MAV_CMD_DO_SET_MODE",
+    "result": "MAV_RESULT_ACCEPTED",
+    "result-description": "Command is valid (is supported and has valid parameters), and was executed.",
+    "progress": "0% (may be percentage or may be an error enum code)",
+    "result_param2": "0 (Additional parameter of the result, example: which parameter of MAV_CMD_NAV_WAYPOINT caused it to be denied.)"
+}
+{
+    "message-type": "COMMAND_ACK",
+    "command": "MAV_CMD_COMPONENT_ARM_DISARM",
+    "result": "MAV_RESULT_ACCEPTED",
+    "result-description": "Command is valid (is supported and has valid parameters), and was executed.",
+    "progress": "0% (may be percentage or may be an error enum code)",
+    "result_param2": "0 (Additional parameter of the result, example: which parameter of MAV_CMD_NAV_WAYPOINT caused it to be denied.)"
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "STATUSTEXT",
+    "severity": "MAV_SEVERITY_WARNING",
+    "text": "Warning: Arming Checks Disabled"
+}
+{
+    "message-type": "STATUSTEXT",
+    "severity": "MAV_SEVERITY_INFO",
+    "text": "Throttle armed"
+}
+{
+    "message-type": "STATUSTEXT",
+    "severity": "MAV_SEVERITY_INFO",
+    "text": "Mission: 1 WP"
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.046000003814697266,
+    "groundspeed": 0.025601059198379517,
+    "heading": "164 degrees (North = 0)",
+    "throttle": "9% (throttle setting)",
+    "alt": 33.880001068115234,
+    "climb": 0.03831730782985687
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.029000001028180122,
+    "groundspeed": 0.11234360188245773,
+    "heading": "164 degrees (North = 0)",
+    "throttle": "19% (throttle setting)",
+    "alt": 33.869998931884766,
+    "climb": 0.049945615231990814
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.055000003427267075,
+    "groundspeed": 0.25362715125083923,
+    "heading": "164 degrees (North = 0)",
+    "throttle": "16% (throttle setting)",
+    "alt": 33.849998474121094,
+    "climb": 0.029658285900950432
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.31300002336502075,
+    "groundspeed": 0.3597681224346161,
+    "heading": "165 degrees (North = 0)",
+    "throttle": "14% (throttle setting)",
+    "alt": 33.82999801635742,
+    "climb": 0.002555308397859335
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.3620000183582306,
+    "groundspeed": 0.3996086120605469,
+    "heading": "166 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.79999923706055,
+    "climb": -0.007594005204737186
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.42500001192092896,
+    "groundspeed": 0.4160676598548889,
+    "heading": "168 degrees (North = 0)",
+    "throttle": "12% (throttle setting)",
+    "alt": 33.790000915527344,
+    "climb": -0.001544390106573701
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.4350000321865082,
+    "groundspeed": 0.4147147536277771,
+    "heading": "170 degrees (North = 0)",
+    "throttle": "12% (throttle setting)",
+    "alt": 33.779998779296875,
+    "climb": -0.0038303714245557785
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.40700000524520874,
+    "groundspeed": 0.45926913619041443,
+    "heading": "172 degrees (North = 0)",
+    "throttle": "11% (throttle setting)",
+    "alt": 33.77000045776367,
+    "climb": -0.029215170070528984
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5049999952316284,
+    "groundspeed": 0.4755557179450989,
+    "heading": "175 degrees (North = 0)",
+    "throttle": "11% (throttle setting)",
+    "alt": 33.7599983215332,
+    "climb": -0.020704714581370354
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.4960000216960907,
+    "groundspeed": 0.47400152683258057,
+    "heading": "177 degrees (North = 0)",
+    "throttle": "11% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.0017191413789987564
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.44700002670288086,
+    "groundspeed": 0.5000228881835938,
+    "heading": "179 degrees (North = 0)",
+    "throttle": "10% (throttle setting)",
+    "alt": 33.73999786376953,
+    "climb": -0.01777230016887188
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5560000538825989,
+    "groundspeed": 0.49294933676719666,
+    "heading": "180 degrees (North = 0)",
+    "throttle": "11% (throttle setting)",
+    "alt": 33.72999954223633,
+    "climb": -0.0037544851657003164
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.44300001859664917,
+    "groundspeed": 0.47200921177864075,
+    "heading": "183 degrees (North = 0)",
+    "throttle": "11% (throttle setting)",
+    "alt": 33.72999954223633,
+    "climb": -0.012488222680985928
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.4320000112056732,
+    "groundspeed": 0.4693182110786438,
+    "heading": "184 degrees (North = 0)",
+    "throttle": "11% (throttle setting)",
+    "alt": 33.72999954223633,
+    "climb": -0.005471385084092617
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.43800002336502075,
+    "groundspeed": 0.44579142332077026,
+    "heading": "185 degrees (North = 0)",
+    "throttle": "12% (throttle setting)",
+    "alt": 33.73999786376953,
+    "climb": 0.002273689955472946
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.2900000214576721,
+    "groundspeed": 0.40905269980430603,
+    "heading": "187 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.73999786376953,
+    "climb": -0.004296392668038607
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5440000295639038,
+    "groundspeed": 0.4154650568962097,
+    "heading": "188 degrees (North = 0)",
+    "throttle": "12% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.005079574417322874
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.46400001645088196,
+    "groundspeed": 0.414576917886734,
+    "heading": "190 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.013763001188635826
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.3970000147819519,
+    "groundspeed": 0.4195552170276642,
+    "heading": "191 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.0027625407092273235
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5700000524520874,
+    "groundspeed": 0.41511479020118713,
+    "heading": "193 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.019233182072639465
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5290000438690186,
+    "groundspeed": 0.4046247899532318,
+    "heading": "194 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.73999786376953,
+    "climb": 0.005290988367050886
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.48000001907348633,
+    "groundspeed": 0.4306158423423767,
+    "heading": "196 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.0009220310021191835
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.4570000171661377,
+    "groundspeed": 0.4279780983924866,
+    "heading": "198 degrees (North = 0)",
+    "throttle": "12% (throttle setting)",
+    "alt": 33.75,
+    "climb": 0.005504358094185591
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.6550000309944153,
+    "groundspeed": 0.4364033639431,
+    "heading": "199 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.7599983215332,
+    "climb": 0.012486114166676998
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.6210000514984131,
+    "groundspeed": 0.4504944384098053,
+    "heading": "201 degrees (North = 0)",
+    "throttle": "12% (throttle setting)",
+    "alt": 33.77000045776367,
+    "climb": 0.0031242219265550375
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5740000009536743,
+    "groundspeed": 0.4058593809604645,
+    "heading": "202 degrees (North = 0)",
+    "throttle": "13% (throttle setting)",
+    "alt": 33.77000045776367,
+    "climb": 0.03805265203118324
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5110000371932983,
+    "groundspeed": 0.3533691465854645,
+    "heading": "204 degrees (North = 0)",
+    "throttle": "16% (throttle setting)",
+    "alt": 33.779998779296875,
+    "climb": 0.027349324896931648
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.4930000305175781,
+    "groundspeed": 0.30405059456825256,
+    "heading": "204 degrees (North = 0)",
+    "throttle": "18% (throttle setting)",
+    "alt": 33.779998779296875,
+    "climb": 0.046593353152275085
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.320000022649765,
+    "groundspeed": 0.3345125913619995,
+    "heading": "206 degrees (North = 0)",
+    "throttle": "19% (throttle setting)",
+    "alt": 33.779998779296875,
+    "climb": -0.05235496163368225
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.5370000004768372,
+    "groundspeed": 0.3404233157634735,
+    "heading": "204 degrees (North = 0)",
+    "throttle": "21% (throttle setting)",
+    "alt": 33.77000045776367,
+    "climb": -0.032574363052845
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.4480000138282776,
+    "groundspeed": 0.31375449895858765,
+    "heading": "205 degrees (North = 0)",
+    "throttle": "24% (throttle setting)",
+    "alt": 33.77000045776367,
+    "climb": -0.034834831953048706
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.41200003027915955,
+    "groundspeed": 0.3316151201725006,
+    "heading": "205 degrees (North = 0)",
+    "throttle": "23% (throttle setting)",
+    "alt": 33.7599983215332,
+    "climb": -0.08005760610103607
+}
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Auto Mode",
+    "system_status": "System is in a non-normal flight mode. It can however still navigate."
+}
+{
+    "message-type": "MISSION_CURRENT",
+    "seq": 1
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.484000027179718,
+    "groundspeed": 0.3319913148880005,
+    "heading": "205 degrees (North = 0)",
+    "throttle": "24% (throttle setting)",
+    "alt": 33.75,
+    "climb": -0.06570575386285782
+}
+{
+    "message-type": "VFR_HUD",
+    "airspeed": 0.38700002431869507,
+    "groundspeed": 0.248732328414917,
+    "heading": "206 degrees (North = 0)",
+    "throttle": "25% (throttle setting)",
+    "alt": 33.73999786376953,
+    "climb": -0.01767568476498127
+}
+===== terminate the message thread.
+{
+    "message-type": "HEARTBEAT",
+    "type": "Ground Rover",
+    "autopilot": "ArduPilot",
+    "custom_type": "Manual Mode",
+    "system_status": "System is active and might be already airborne. Motors are engaged."
+}
