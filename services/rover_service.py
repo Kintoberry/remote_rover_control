@@ -8,7 +8,7 @@ from library import auxiliary_functions as aux
 class RoverService(rpyc.Service):
     def __init__(self, rover_instance):
         super().__init__()
-        self.rover.instance = rover_instance
+        self.rover_instance = rover_instance
 
     def on_connect(self, conn):
         pass
@@ -17,12 +17,12 @@ class RoverService(rpyc.Service):
         pass
     
     def exposed_initiate_rover(self) -> bool:
-        isInitialized = self.rover.initiate()
+        isInitialized = self.rover_instance.initiate()
         if isInitialized:
             return True
         return False
     
-    def exposed_connect_to_rover(self):
+    def exposed_connect_to_rover(self) -> dict:
         try:
             rover_serial = aux.connect_to_rover()
             self.rover_instance.set_rover_serial(rover_serial)
@@ -31,6 +31,15 @@ class RoverService(rpyc.Service):
             return {"status_code": 400, "message": str(e)}  # Bad Request
         except Exception as e:
             return {"status_code": 500, "message": str(e)}  # Internal Server Error
+        
+    def exposed_conduct_mission(self):
+        if not self.rover_instance.ready_for_mission():
+            return {"status_code": 400, "message": "ERROR: You need to connect to the rover, downalod the mission, and initiate the rover."}
+        if not self.rover_instance.set_auto_mode():
+            return {"status_code": 400, "message": "ERROR: Failed to set AUTO mode."}
+        if not self.rover_instance.arm_rover():
+            return {"status_code": 400, "message": "ERROR: Rover cannot be armed."}
+        return {"status_code": 200, "message": "The mission has started"}
 
 
 def main():

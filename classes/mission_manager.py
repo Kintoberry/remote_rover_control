@@ -24,6 +24,9 @@ class MissionManager:
     def load_mission(self):
         self.mission_blueprint.download_mission(self.rover_serial)
 
+    def is_mission_downloaded(self) -> bool:
+        return self.mission_blueprint.is_mission_downloaded()
+
     def move_to_next_waypoint(self) -> bool:
         # move to the next waypoint regardless of what it's doing now
         with self.lock:

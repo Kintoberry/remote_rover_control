@@ -1,21 +1,20 @@
 from pymavlink import mavutil
 # from library import auxiliary_functions as aux
 import sys, os
+from .custom_exceptions import MissionAlreadyDownloadedException
 
 class MissionBlueprint:
     def __init__(self):
         self.mission_items = []
         self.waypoints = None
         self.mission_count = None
+        self.mission_downloaded = False
 
-    def add_mission_item(self, item):
+    def _add_mission_item(self, item):
         self.mission_items.append(item)
 
-    def save_waypoints(self) -> bool:
-        if not self.mission_items:
-            return False
+    def _save_waypoints(self):
         self.waypoints = [item for item in self.mission_items if item.command == mavutil.mavlink.MAV_CMD_NAV_WAYPOINT]
-        return True
     
    
     def get_commands_related_to_waypoints(self):
@@ -27,7 +26,9 @@ class MissionBlueprint:
         ]
         return [item for item in self.mission_items if item.command in waypoint_commands]
     
-    def download_mission(self, rover_serial):
+    def download_mission(self, rover_serial, force=False):
+        if not force and self.mission_downloaded:
+            raise MissionAlreadyDownloadedException("Missions is already downloaded. Use `force` parameter for re-download.")
         # Request the number of mission items
         rover_serial.mav.mission_request_list_send(rover_serial.target_system, rover_serial.target_component)
         self.mission_count = None
@@ -41,13 +42,15 @@ class MissionBlueprint:
         for i in range(self.mission_count):
             rover_serial.mav.mission_request_int_send(rover_serial.target_system, rover_serial.target_component, i)
             msg = rover_serial.recv_match(type="MISSION_ITEM_INT", blocking=True)  # Use MISSION_ITEM_INT instead of MISSION_ITEM
-            mission_blueprint.add_mission_item(msg)
+            mission_blueprint._add_mission_item(msg)
 
         # Send MISSION_ACK after downloading all mission items
         rover_serial.mav.mission_ack_send(rover_serial.target_system, rover_serial.target_component, mavutil.mavlink.MAV_MISSION_ACCEPTED)
-        if not self.save_waypoints():
-            print("ERROR: cannot set the waypoints")
+        self._save_waypoints()
+        self.mission_downloaded = True
 
+    def is_mission_downloaded(self) -> bool:
+        return self.mission_downloaded
 
     def get_number_of_waypoints(self):
         return len(self.waypoints)

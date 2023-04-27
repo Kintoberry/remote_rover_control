@@ -26,6 +26,7 @@ class QueueManager(AbstractQueueManager):
         self.queues = {
             "sync_cmd": Queue(maxsize=10),
             "sync_cmd_ack": Queue(maxsize=10),
+            "sync_cmd_result": Queue(maxsize=1),
             "async_cmd": Queue(maxsize=100),
             "async_cmd_ack": Queue(maxsize=100),
             "mission_message": Queue(maxsize=100),

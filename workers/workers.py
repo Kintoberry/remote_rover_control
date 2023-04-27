@@ -9,6 +9,7 @@ import time
 import os
 from pymavlink import mavutil
 from classes import QueueManager, MessageDistributor, AbstractQueueManager
+from classes.custom_exceptions import SyncCommandFailedException
 
 
 sensor_measurement_finished_event = threading.Event()
@@ -120,16 +121,24 @@ def worker_send_mav_cmd_sync(rover, terminate_event, queue_manager):
         except queue.Empty:
             continue
         # TODO: put counter here so that after, say, 5 retransmission we exit the loop and report an error
-        while True:
+        counter = 0
+        success = False
+        while counter < 5:
             if mav_cmd_tuple[0] == "COMMAND_LONG":
                 rover.mav.command_long_send(*mav_cmd_tuple[1:])
             command_ack = queue_manager.get("sync_cmd_ack", block=True, timeout=2)
             if command_ack is None:
                 # have to resend the command
+                counter += 1
                 continue 
             elif command_ack.command == mav_cmd_tuple[3]:
                 # command is processed by the ardupilot
+                if command_ack.result == mavutil.mavlink.MAV_RESULT_ACCEPTED:
+                    sucess = True
                 break
+        if not success:
+            raise SyncCommandFailedException(f"Failed to send a sync-type command: {mav_cmd_tuple[3]}")
+        queue_manager.put("sync_cmd_result", success)
 
 def worker_send_mav_cmd_async(rover, terminate_event, queue_manager):
     while not terminate_event.is_set():

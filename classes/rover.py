@@ -1,4 +1,5 @@
 import threading
+from pymavlink import mavutil
 from library import utility_functions as helper
 from library import auxiliary_functions as aux
 from workers import workers
@@ -16,6 +17,8 @@ class Rover:
         self.threads_initiated = False
         self.worker_threads = None
         self.threads_terminate_event = None
+        self.rover_armed = False
+        self.rover_mode = None
 
     # Setter Injection 
     def set_rover_serial(self, rover_serial, force=False):
@@ -43,8 +46,82 @@ class Rover:
             #     return False
             
             self._initiate_threads()
-            self.initiated = True
+            self.rover_initiated = True
         return True
+    
+    def arm_rover(self) -> bool:
+        mav_cmd = ( "COMMAND_LONG",
+            self.rover_serial.target_system,
+            self.rover_serial.target_component,
+            mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,
+            0, # Confirmation
+            1, # 0:disarm, 1:arm
+            21196, # 0: arm-disarm unless prevented by safety checks, 21196: force arming or disarming
+            0, # Reserved
+            0, # Reserved
+            0, # Reserved
+            0, # Reserved
+            0  # Reserved 
+         )
+        self.queue_manager.put("sync_cmd", block=True)
+        success = self.queue_manager.get("sync_cmd_result")
+        if success:
+            self.rover_mode = "AUTO"
+            return True
+        else:
+            return False
+        
+    def disarm_rover(self) -> bool:
+        mav_cmd = ( "COMMAND_LONG",
+            self.rover_serial.target_system,
+            self.rover_serial.target_component,
+            mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,
+            0, # Confirmation
+            0, # 0:disarm, 1:arm
+            21196, # 0: arm-disarm unless prevented by safety checks, 21196: force arming or disarming
+            0, # Reserved
+            0, # Reserved
+            0, # Reserved
+            0, # Reserved
+            0  # Reserved 
+         )
+        self.queue_manager.put("sync_cmd", block=True)
+        success = self.queue_manager.get("sync_cmd_result")
+        if success:
+            self.rover_mode = "AUTO"
+            return True
+        else:
+            return False
+    
+    def set_auto_mode(self) -> bool:
+        AUTO_MODE = 10 # refer to https://ardupilot.org/rover/docs/parameters.html#mode1
+        mav_cmd = ( "COMMAND_LONG",
+            self.rover_serial.target_system,
+            self.rover_serial.target_component,
+            mavutil.mavlink.MAV_CMD_DO_SET_MODE,
+            0, # Confirmation (default 0)
+            mavutil.mavlink.MAV_MODE_FLAG_CUSTOM_MODE_ENABLED, # 
+            AUTO_MODE, 
+            0, # Reserved
+            0, # Reserved
+            0, # Reserved
+            0, # Reserved
+            0  # Reserved
+        )
+        self.queue_manager.put("sync_cmd", block=True)
+        success = self.queue_manager.get("sync_cmd_result")
+        if success:
+            self.rover_mode = "AUTO"
+            return True
+        else:
+            return False
+
+
+    def ready_for_mission(self) -> bool:
+        if self.rover_serial and self.threads_initiated and self.mission_manager.is_mission_downloaded():
+            return True 
+        else:
+            return False
     
     # def _connect_to_rover(self) -> bool:
     #     print("Initiating Rover..")
